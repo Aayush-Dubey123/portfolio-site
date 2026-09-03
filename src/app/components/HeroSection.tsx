@@ -18,11 +18,11 @@ export default function HeroSection({ onViewWork, onAboutMe }: HeroSectionProps)
       </h1>
 
       <p className="hero-tagline">
-        I build digital experiences<br className="tagline-br" /> that are meaningful &amp; impactful.
+        Full Stack Developer &amp;<br className="tagline-br" /> Cloud Enthusiast.
       </p>
 
       <p className="hero-description">
-        I&apos;m a developer who loves crafting clean,<br className="desc-br" /> intuitive and performance-driven web<br className="desc-br" /> experiences.
+        B.Tech CSBS student building end-to-end web platforms,<br className="desc-br" /> AI-assisted workflows, and scalable cloud<br className="desc-br" /> infrastructure with React, FastAPI &amp; Python.
       </p>
 
       <div className="hero-actions">

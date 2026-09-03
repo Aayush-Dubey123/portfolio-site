@@ -61,21 +61,21 @@ function MailIcon({ size = 18 }: { size?: number }) {
 export const SOCIAL_LINKS = [
   {
     name: 'GitHub',
-    href: 'https://github.com/aayushdubey',
+    href: 'https://github.com/Aayush-Dubey123',
     icon: GithubIcon,
     ariaLabel: 'Visit GitHub profile',
   },
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com/in/aayushdubey',
+    href: 'https://www.linkedin.com/in/Aayush-Dubey-Ab19A72B9/',
     icon: LinkedinIcon,
     ariaLabel: 'Visit LinkedIn profile',
   },
   {
     name: 'Email',
-    href: 'mailto:aayush@example.com',
+    href: 'mailto:aayushdubey2300@gmail.com',
     icon: MailIcon,
-    ariaLabel: 'Send an email',
+    ariaLabel: 'Send an email to Aayush',
   },
 ] as const;
 

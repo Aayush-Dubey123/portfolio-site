@@ -1,6 +1,6 @@
 'use client';
 
-function CalendarIcon({ size = 18 }: { size?: number }) {
+function GraduationCapIcon({ size = 18 }: { size?: number }) {
   return (
     <svg
       width={size}
@@ -13,10 +13,30 @@ function CalendarIcon({ size = 18 }: { size?: number }) {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M8 2v4" />
-      <path d="M16 2v4" />
-      <rect width="18" height="18" x="3" y="4" rx="2" />
-      <path d="M3 10h18" />
+      <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+      <path d="M22 10v6" />
+      <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+    </svg>
+  );
+}
+
+function SchoolIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3 21h18" />
+      <path d="M5 21V7l7-4 7 4v14" />
+      <path d="M9 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+      <path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
     </svg>
   );
 }
@@ -36,26 +56,6 @@ function MapPinIcon({ size = 18 }: { size?: number }) {
     >
       <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
       <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-
-function GraduationCapIcon({ size = 18 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-      <path d="M22 10v6" />
-      <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
     </svg>
   );
 }
@@ -108,19 +108,19 @@ interface PersonalInfoItem {
 
 const PERSONAL_INFO: PersonalInfoItem[] = [
   {
-    icon: CalendarIcon,
-    value: '23 march, 2005',
-    label: 'Birthday',
+    icon: GraduationCapIcon,
+    value: 'B.Tech – CSBS (CGPA 9.0)',
+    label: 'Degree & Score',
+  },
+  {
+    icon: SchoolIcon,
+    value: 'St. Vincent Pallotti College, Nagpur (2027)',
+    label: 'Institution & Year',
   },
   {
     icon: MapPinIcon,
-    value: 'Nagpur ,India',
+    value: 'Nagpur, India',
     label: 'Location',
-  },
-  {
-    icon: GraduationCapIcon,
-    value: 'B.Tech CSCS',
-    label: 'Education',
   },
   {
     icon: MailIcon,
@@ -139,13 +139,13 @@ export default function AboutSection() {
 
         <div className="about-description">
           <p className="about-paragraph">
-            I&apos;m a passionate Full Stack Developer based in India.
+            I&apos;m a Full Stack Developer pursuing B.Tech in Computer Science &amp; Business Systems at St. Vincent Pallotti College of Engineering and Technology, Nagpur.
           </p>
           <p className="about-paragraph">
-            I love building beautiful, accessible and<br className="about-br" /> high-performance websites.
+            I specialize in building full-stack platforms using Python, FastAPI, React, MongoDB, and PostgreSQL, backed by cloud deployment tools including Docker, AWS, Vercel, and Render.
           </p>
           <p className="about-paragraph">
-            When I&apos;m not coding, you&apos;ll find me exploring<br className="about-br" /> new places and capturing moments.
+            Experienced in creating AI-assisted workflows, integrating MCP with Telegram, and developing robust operational tools that solve real-world problems.
           </p>
         </div>
 
@@ -163,7 +163,7 @@ export default function AboutSection() {
       </div>
 
       {/* Right Column: 4 Clean Personal Info Rows */}
-      <div className="about-right" role="list" aria-label="Personal Information">
+      <div className="about-right" role="list" aria-label="Education and Contact Information">
         {PERSONAL_INFO.map((item) => (
           <div className="about-info-row" key={item.label} role="listitem">
             <div className="about-info-icon-box" aria-hidden="true">

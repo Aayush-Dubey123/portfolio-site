@@ -1,93 +1,164 @@
 'use client';
 
-function ReactIcon({ size = 20 }: { size?: number }) {
+function CodeIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(0 12 12)" />
-      <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)" />
-      <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)" />
-      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <polyline points="16 18 22 12 16 6" />
+      <polyline points="8 6 2 12 8 18" />
     </svg>
   );
 }
 
-function TsIcon({ size = 20 }: { size?: number }) {
+function GlobeIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect width="18" height="18" x="3" y="3" rx="4" />
-      <path d="M8 9h4M10 9v7" />
-      <path d="M14 13.5c.5.5 1.2.8 1.8.8.7 0 1.2-.4 1.2-1 0-1.2-3-1-3-2.5 0-.8.6-1.5 1.8-1.5.7 0 1.3.3 1.7.7" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
     </svg>
   );
 }
 
-function TailwindIcon({ size = 20 }: { size?: number }) {
+function CloudIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M6 12c.5-2 2-3.5 4.5-3.5 3.5 0 3.5 3 6.5 3 2 0 3-1 3.5-2-.5 2-2 3.5-4.5 3.5-3.5 0-3.5-3-6.5-3-2 0-3 1-3.5 2z" />
-      <path d="M3.5 17.5c.5-2 2-3.5 4.5-3.5 3.5 0 3.5 3 6.5 3 2 0 3-1 3.5-2-.5 2-2 3.5-4.5 3.5-3.5 0-3.5-3-6.5-3-2 0-3 1-3.5 2z" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
     </svg>
   );
 }
 
-function NodeIcon({ size = 20 }: { size?: number }) {
+function DatabaseIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M12 2.5 4.5 6.8v8.6L12 21.5l7.5-6.1V6.8L12 2.5z" />
-      <path d="M9 10h6v4H9z" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <ellipse cx="12" cy="5" rx="9" ry="3" />
+      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+      <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
     </svg>
   );
 }
 
-function MongoIcon({ size = 20 }: { size?: number }) {
+function ToolIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M12 2.5c0 0-6 4.5-6 10.5 0 4.5 3.5 8 6 8.5 2.5-.5 6-4 6-8.5 0-6-6-10.5-6-10.5z" />
-      <path d="M12 2.5v19" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3 3v18h18" />
+      <path d="m19 9-5 5-4-4-3 3" />
     </svg>
   );
 }
 
-function DesignIcon({ size = 20 }: { size?: number }) {
+function CpuIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M12 2 2 7l10 5 10-5-10-5z" />
-      <path d="m2 17 10 5 10-5" />
-      <path d="m2 12 10 5 10-5" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect width="16" height="16" x="4" y="4" rx="2" />
+      <rect width="6" height="6" x="9" y="9" rx="1" />
+      <path d="M15 2v2" />
+      <path d="M15 20v2" />
+      <path d="M2 15h2" />
+      <path d="M2 9h2" />
+      <path d="M20 15h2" />
+      <path d="M20 9h2" />
+      <path d="M9 2v2" />
+      <path d="M9 20v2" />
     </svg>
   );
 }
 
 const SKILLS_DATA = [
   {
-    name: 'React / Next.js',
+    category: 'Languages',
+    name: 'C, C++, Python',
+    percentage: '92%',
+    icon: CodeIcon,
+  },
+  {
+    category: 'Web Development',
+    name: 'React, Vite, FastAPI, REST API',
     percentage: '95%',
-    icon: ReactIcon,
+    icon: GlobeIcon,
   },
   {
-    name: 'Node.js',
-    percentage: '90%',
-    icon: NodeIcon,
+    category: 'DevOps & Cloud',
+    name: 'Git, Docker, AWS, GCP, Vercel, Render, Ansible',
+    percentage: '88%',
+    icon: CloudIcon,
   },
   {
-    name: 'TypeScript',
-    percentage: '90%',
-    icon: TsIcon,
+    category: 'Databases',
+    name: 'PostgreSQL, MongoDB',
+    percentage: '86%',
+    icon: DatabaseIcon,
   },
   {
-    name: 'MongoDB',
+    category: 'Tools & Platforms',
+    name: 'Excel, Power BI, Word',
     percentage: '85%',
-    icon: MongoIcon,
+    icon: ToolIcon,
   },
   {
-    name: 'Tailwind CSS',
-    percentage: '95%',
-    icon: TailwindIcon,
-  },
-  {
-    name: 'UI / UX Design',
-    percentage: '80%',
-    icon: DesignIcon,
+    category: 'Core Concepts',
+    name: 'DSA in C++, Web Development Fundamentals',
+    percentage: '90%',
+    icon: CpuIcon,
   },
 ] as const;
 
@@ -99,7 +170,7 @@ export default function SkillsSection() {
         <h2 className="skills-title">Skills</h2>
 
         <p className="skills-subtitle">
-          I work with a variety of technologies<br className="skills-br" /> to build fast, scalable and exceptional<br className="skills-br" /> digital experiences.
+          Technologies and core engineering<br className="skills-br" /> concepts I use to develop reliable,<br className="skills-br" /> high-performance systems.
         </p>
       </div>
 
@@ -107,16 +178,18 @@ export default function SkillsSection() {
       <div className="skills-right" role="list" aria-label="Technical Skills List">
         <div className="skills-bar-grid">
           {SKILLS_DATA.map((skill) => (
-            <div className="skill-item" key={skill.name} role="listitem">
+            <div className="skill-item" key={skill.category} role="listitem">
               <div className="skill-icon-wrapper" aria-hidden="true">
                 <skill.icon size={20} />
               </div>
 
               <div className="skill-content">
                 <div className="skill-header">
-                  <span className="skill-name">{skill.name}</span>
+                  <span className="skill-category-tag">{skill.category}</span>
                   <span className="skill-percentage">{skill.percentage}</span>
                 </div>
+
+                <div className="skill-name-text">{skill.name}</div>
 
                 <div className="skill-track" aria-hidden="true">
                   <div

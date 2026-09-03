@@ -58,7 +58,7 @@ function LinkedinIcon({ size = 16 }: { size?: number }) {
   );
 }
 
-function InstagramIcon({ size = 16 }: { size?: number }) {
+function MailIcon({ size = 16 }: { size?: number }) {
   return (
     <svg
       width={size}
@@ -71,9 +71,8 @@ function InstagramIcon({ size = 16 }: { size?: number }) {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
   );
 }
@@ -87,14 +86,14 @@ export default function ContactSection() {
           <h2 className="contact-title">Let&apos;s Connect</h2>
 
           <p className="contact-subtitle">
-            Have a project in mind or just want<br className="contact-br" /> to say hello? I&apos;d love to hear from you.
+            Have an internship opportunity, a project<br className="contact-br" /> in mind, or just want to say hello?<br className="contact-br" /> I&apos;d love to hear from you.
           </p>
 
           <a
             href="mailto:aayushdubey2300@gmail.com"
             className="contact-cta-btn"
             id="contact-get-in-touch-btn"
-            aria-label="Send email to Aayush"
+            aria-label="Send email to Aayush Dubey"
           >
             <span>GET IN TOUCH</span>
             <ArrowRightIcon size={13} />
@@ -116,7 +115,7 @@ export default function ContactSection() {
 
           <div className="contact-social-row" role="list" aria-label="Social Profiles">
             <a
-              href="https://github.com/aayushdubey"
+              href="https://github.com/Aayush-Dubey123"
               className="contact-social-item"
               target="_blank"
               rel="noopener noreferrer"
@@ -128,7 +127,7 @@ export default function ContactSection() {
             </a>
 
             <a
-              href="https://linkedin.com/in/aayushdubey"
+              href="https://www.linkedin.com/in/Aayush-Dubey-Ab19A72B9/"
               className="contact-social-item"
               target="_blank"
               rel="noopener noreferrer"
@@ -140,15 +139,13 @@ export default function ContactSection() {
             </a>
 
             <a
-              href="https://instagram.com/aayushdubey"
+              href="mailto:aayushdubey2300@gmail.com"
               className="contact-social-item"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram profile"
+              aria-label="Send direct email"
               role="listitem"
             >
-              <InstagramIcon size={16} />
-              <span>INSTAGRAM</span>
+              <MailIcon size={16} />
+              <span>EMAIL</span>
             </a>
           </div>
         </div>
@@ -159,13 +156,13 @@ export default function ContactSection() {
         <div className="contact-footer-left">
           <div className="footer-monogram" aria-hidden="true">AD</div>
           <p className="footer-copyright">
-            &copy; 2025 Aayush Dubey. All rights reserved.
+            &copy; 2026 Aayush Dubey. All rights reserved.
           </p>
         </div>
 
         <div className="contact-footer-right">
           <p className="footer-credits">
-            Built with <span className="heart-icon" aria-label="love">❤️</span> and lots of coffee.
+            Built with <span className="heart-icon" aria-label="love">❤️</span>, Next.js, and React.
           </p>
         </div>
       </footer>

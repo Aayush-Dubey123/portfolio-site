@@ -21,22 +21,25 @@ function ArrowRightIcon({ size = 14 }: { size?: number }) {
 
 const EXPERIENCES = [
   {
-    period: '2023 – Present',
-    role: 'Full Stack Developer',
-    company: 'Freelance',
-    description: 'Building modern web apps with Next.js, Node.js and MongoDB.',
+    period: 'Apr 2026 – Now',
+    role: 'Intern — WordPress CMS',
+    company: 'House Of Ruvi',
+    description:
+      'Managed 100+ product listings and promotional content through WordPress CMS. Automated product uploads, reducing repetitive catalog management effort, and optimized product presentation to improve customer engagement.',
   },
   {
-    period: '2022 – 2023',
-    role: 'Frontend Developer',
-    company: 'TechNova Solutions',
-    description: 'Developed responsive interfaces and improved web performance.',
+    period: 'Mar 2026 – May 2026',
+    role: 'Forward Development Engineer Intern',
+    company: 'Golden-Kulcha & Co',
+    description:
+      'Developed a full-stack food ordering system covering menu browsing, order placement, and order tracking. Built an automated feedback workflow (customer submissions → admin review) and integrated a unified inventory and billing system.',
   },
   {
-    period: '2021 – 2022',
-    role: 'Web Developer Intern',
-    company: 'CodeCraft Labs',
-    description: 'Worked on client projects and learned industry best practices.',
+    period: 'Jun 2025 – Jul 2025',
+    role: 'Enterprise Resource Planning Intern',
+    company: 'Ira - Agro Tech Pvt. Ltd',
+    description:
+      'Supported ERP planning and client coordination, translating operational requirements into structured Excel-based workflows. Maintained records and reports for decision-making across procurement, sales, and billing.',
   },
 ] as const;
 
@@ -48,7 +51,7 @@ export default function ExperienceSection() {
         <h2 className="experience-title">Experience</h2>
 
         <p className="experience-subtitle">
-          Over the years, I&apos;ve worked with amazing<br className="experience-br" /> people and built solutions for startups,<br className="experience-br" /> agencies and global brands.
+          Professional engineering internships<br className="experience-br" /> delivering full-stack platforms, ERP systems,<br className="experience-br" /> and automated workflows.
         </p>
 
         <a
@@ -57,7 +60,7 @@ export default function ExperienceSection() {
           id="experience-cta-btn"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="View Full Experience"
+          aria-label="View Full Experience Resume"
         >
           <span>VIEW FULL EXPERIENCE</span>
           <ArrowRightIcon size={14} />
