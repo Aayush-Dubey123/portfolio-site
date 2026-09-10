@@ -1,5 +1,4 @@
 'use client';
-
 function GraduationCapIcon({ size = 18 }: { size?: number }) {
   return (
     <svg
