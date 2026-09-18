@@ -1,0 +1,33 @@
+export const USER = {
+  name: "AAYUSH DUBEY",
+  email: "aayushdubey2300@gmail.com",
+  avatar: "/assets/avatar-v2.png",
+  firstName: "Aayush",
+  lastName: "Dubey",
+  fullName: "Aayush Chandrashekhar Dubey",
+  username: "Aayush-Dubey123",
+  gender: "Male",
+  socials: [
+    {
+      name: "Gmail",
+      href: "mailto:aayushdubey2300@gmail.com",
+      icon: "/assets/gmail.webp",
+      username: "aayushdubey2300@gmail.com",
+    },
+    {
+      name: "Github",
+      href: "https://github.com/Aayush-Dubey123",
+      icon: "/assets/github.webp",
+      username: "@Aayush-Dubey123",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/aayush-dubey-ab19a72b9/",
+      icon: "/assets/linkedin.webp",
+      username: "aayush-dubey-ab19a72b9",
+    },
+  ],
+}
+
+
+
