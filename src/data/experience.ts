@@ -54,7 +54,7 @@ export const EXPERIENCE: Experience[] = [
       "Assisted in understanding client requirements, coordinating across procurement, sales, and billing processes.",
     ],
     skills: ["ERP", "Microsoft Excel", "Process Operations", "Client Coordination"],
-    isExpanded: false,
+    isExpanded: true,
   },
 ]
 

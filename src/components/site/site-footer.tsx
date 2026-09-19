@@ -25,19 +25,19 @@ export function SiteFooter() {
                 {USER.name}
               </a>
             </Button>{" "}
-            • Portfolio inspired by{" "}
+            • Build • Learn • Explore •{" "}
             <Button
               asChild
               variant="link"
               className="m-0 p-0 text-xs underline"
             >
-              <a
+              {/* <a
                 href="https://udaykiran.dev"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 udaykiran.dev
-              </a>
+              </a> */}
             </Button>
           </h3>
         </div>

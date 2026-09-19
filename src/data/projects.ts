@@ -16,8 +16,8 @@ export const PROJECTS: Project[] = [
     href: "/projects/warehouse-management-system",
     description:
       "End-to-end warehouse platform spanning 5+ core workflows—inventory, orders, receiving, picking, and dispatch—with dedicated role-based access and AI/MCP integration.",
-    image: "/assets/dsamrr-light.png",
-    darkModeImage: "/assets/dsamrr-dark.png",
+    image: "/assets/wms.png",
+    darkModeImage: "/assets/wms.png",
     githubLink: "https://github.com/Aayush-Dubey123/warehouse-management-system",
     liveLink: "https://warehouse-management-system.vercel.app",
     skills: [
@@ -41,8 +41,8 @@ export const PROJECTS: Project[] = [
     href: "/projects/hospital-management-system",
     description:
       "AI-assisted hospital readiness and appointment platform featuring conversational booking, Telegram MCP integration, and CLI readiness diagnostics.",
-    image: "/assets/domainyourlink-light.png",
-    darkModeImage: "/assets/domainyourlink-dark.png",
+    image: "/assets/hospital-system.png",
+    darkModeImage: "/assets/hospital-system.png",
     githubLink: "https://github.com/Aayush-Dubey123/hospital-management-system",
     liveLink: "https://hospital-management-system.vercel.app",
     skills: [
@@ -65,8 +65,8 @@ export const PROJECTS: Project[] = [
     href: "/projects/cryow3times",
     description:
       "Real-time cryptocurrency news aggregator with automated API pipelines, Next.js API Routes, MongoDB, Prisma ORM, and secure authentication.",
-    image: "/assets/callverse-light.png",
-    darkModeImage: "/assets/callverse-dark.png",
+    image: "/assets/cryowtimes.png",
+    darkModeImage: "/assets/cryowtimes.png",
     githubLink: "https://github.com/Aayush-Dubey123/CryoW3times",
     liveLink: "https://cryow3times.vercel.app",
     skills: [
@@ -89,8 +89,8 @@ export const PROJECTS: Project[] = [
     href: "/projects/food-ordering-system",
     description:
       "Full-stack food ordering platform covering browsing, order placement, order tracking, customer feedback workflows, and inventory-sales integration.",
-    image: "/assets/aurafit-light.png",
-    darkModeImage: "/assets/aurafit-dark.png",
+    image: "/assets/golden.png",
+    darkModeImage: "/assets/golden.png",
     githubLink: "https://github.com/Aayush-Dubey123/food-ordering-system",
     liveLink: "https://golden-kulcha.vercel.app",
     skills: [

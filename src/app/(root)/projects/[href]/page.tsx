@@ -20,7 +20,7 @@ const ProjectPage = async ({
 }: {
   params: Promise<{ href: string }>
 }) => {
-  const href = (await params)?.href || "/dsamrr"
+  const href = (await params)?.href || "warehouse-management-system"
   const project = PROJECTS.find((project) => project.href.endsWith(href))
   if (!project) {
     return (

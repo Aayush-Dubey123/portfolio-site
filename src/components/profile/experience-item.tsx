@@ -1,4 +1,4 @@
-import { ChevronsDownUpIcon, ChevronsUpDownIcon } from "lucide-react"
+import { Briefcase, ChevronsDownUpIcon, ChevronsUpDownIcon } from "lucide-react"
 import Image from "next/image"
 
 import {
@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/collapsible"
 import { Experience } from "@/data/experience"
 import { cn, formatMonthYear } from "@/lib/utils"
-import { Avatar, AvatarFallback } from "../ui/avatar"
 import { Badge } from "../ui/badge"
 
 export function ExperienceItem({
@@ -18,10 +17,6 @@ export function ExperienceItem({
   className?: string
   experience: Experience
 }) {
-  const companyName = experience.company
-  const isUpperCase = (char: string) => char === char.toUpperCase()
-  const avatarName = companyName.split("").filter(isUpperCase).join("")
-
   return (
     <Collapsible defaultOpen={experience.isExpanded} asChild>
       <div
@@ -38,18 +33,16 @@ export function ExperienceItem({
               width={32}
               height={32}
               quality={100}
-              className="mx-4 flex aspect-square size-4 shrink-0 sm:size-6"
+              className="mx-3 flex aspect-square size-5 shrink-0 rounded-full object-contain sm:size-6"
               unoptimized
               aria-hidden="true"
             />
           ) : (
             <div
-              className="mx-4 flex size-6 shrink-0 items-center justify-center"
+              className="bg-muted/70 border-border mx-3 flex size-7 shrink-0 items-center justify-center rounded-full border shadow-xs sm:size-8"
               aria-hidden="true"
             >
-              <Avatar>
-                <AvatarFallback>{avatarName}</AvatarFallback>
-              </Avatar>
+              <Briefcase className="size-3.5 text-primary/90 sm:size-4" />
             </div>
           )}
 
