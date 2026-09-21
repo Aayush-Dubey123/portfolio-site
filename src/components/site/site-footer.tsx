@@ -12,7 +12,7 @@ export function SiteFooter() {
             <Button
               asChild
               variant="link"
-              className="m-0 p-0 text-xs underline"
+              className="m-0 p-0 text-xs underline font-medium hover:text-primary transition-colors"
             >
               <a
                 href={
@@ -25,20 +25,7 @@ export function SiteFooter() {
                 {USER.name}
               </a>
             </Button>{" "}
-            • Build • Learn • Explore •{" "}
-            <Button
-              asChild
-              variant="link"
-              className="m-0 p-0 text-xs underline"
-            >
-              {/* <a
-                href="https://udaykiran.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                udaykiran.dev
-              </a> */}
-            </Button>
+            • Build • Learn • Explore
           </h3>
         </div>
       </ContainerWrapper>
