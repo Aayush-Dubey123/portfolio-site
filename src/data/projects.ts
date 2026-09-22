@@ -92,7 +92,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/golden.png",
     darkModeImage: "/assets/golden.png",
     githubLink: "https://github.com/Aayush-Dubey123/food-ordering-system",
-    liveLink: "https://golden-kulcha.vercel.app",
+    liveLink: "https://v0-golden-two.vercel.app/",
     skills: [
       "React",
       "FastAPI",
