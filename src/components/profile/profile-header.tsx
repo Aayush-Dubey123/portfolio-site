@@ -23,7 +23,7 @@ export function ProfileHeader() {
               width={300}
               height={300}
               fetchPriority="high"
-              className="ring-border ring-offset-edge size-28 rounded-full ring-1 ring-offset-2 select-none"
+              className="ring-border ring-offset-edge size-28 rounded-full ring-1 ring-offset-2 select-none object-cover object-[center_15%] shadow-md transition-transform duration-300 hover:scale-105"
             />
           </div>
           <div className="flex items-center justify-center gap-1 sm:mt-2 sm:justify-start">

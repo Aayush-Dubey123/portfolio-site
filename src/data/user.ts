@@ -1,7 +1,7 @@
 export const USER = {
   name: "AAYUSH DUBEY",
   email: "aayushdubey2300@gmail.com",
-  avatar: "/assets/avatar-v2.png",
+  avatar: "/assets/profile-aavatar.jpg",
   firstName: "Aayush",
   lastName: "Dubey",
   fullName: "Aayush Chandrashekhar Dubey",

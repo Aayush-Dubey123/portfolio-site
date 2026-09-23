@@ -27,7 +27,7 @@ export function About() {
           <li className="flex items-start gap-2.5 text-primary/90 text-sm sm:text-base leading-relaxed">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="font-semibold text-primary">Hackathons &amp; Achievements:</strong> Winner of GEN-AI Bootcamp/Hackathon (Eigi.AI) &amp; Top 10 finalist in Envision Inter-College Hackathon out of 1,000+ applicants.
+              <strong className="font-semibold text-primary">Hackathons &amp; Achievements:</strong> Winner of GEN-AI Bootcamp/Hackathon (Eigi.AI).
             </span>
           </li>
         </ul>
