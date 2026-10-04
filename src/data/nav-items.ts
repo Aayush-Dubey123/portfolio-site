@@ -8,9 +8,11 @@ export const NAV_ITEMS = [
     href: "/#projects",
   },
   {
+    name: "Journey",
+    href: "/#journey",
+  },
+  {
     name: "Tech Stack",
     href: "/#tech-stack",
   },
 ]
-
-

@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/wms.png",
     darkModeImage: "/assets/wms.png",
     githubLink: "https://github.com/Aayush-Dubey123/warehouse-management-system",
-    liveLink: "https://warehouse-management-system.vercel.app",
+    liveLink: "https://wms-indol-six.vercel.app",
     skills: [
       "FastAPI",
       "MongoDB",
@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/hospital-system.png",
     darkModeImage: "/assets/hospital-system.png",
     githubLink: "https://github.com/Aayush-Dubey123/hospital-management-system",
-    liveLink: "https://hospital-management-system.vercel.app",
+    liveLink: "https://booking-system-hospital.vercel.app",
     skills: [
       "FastAPI",
       "PostgreSQL",
@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/cryowtimes.png",
     darkModeImage: "/assets/cryowtimes.png",
     githubLink: "https://github.com/Aayush-Dubey123/CryoW3times",
-    liveLink: "https://cryow3times.vercel.app",
+    liveLink: "https://cryo-w3-time-s.vercel.app/",
     skills: [
       "Next.js",
       "MongoDB",
@@ -92,7 +92,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/golden.png",
     darkModeImage: "/assets/golden.png",
     githubLink: "https://github.com/Aayush-Dubey123/food-ordering-system",
-    liveLink: "https://v0-golden-two.vercel.app/",
+    liveLink: "https://golden-gold-zeta.vercel.app/",
     skills: [
       "React",
       "FastAPI",

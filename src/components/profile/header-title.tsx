@@ -3,10 +3,11 @@ import { cn, slugify } from "@/lib/utils"
 type HeaderTitleProps = {
   title: string
   className?: string
+  id?: string
 }
-export function HeaderTitle({ title, className }: HeaderTitleProps) {
+export function HeaderTitle({ title, className, id }: HeaderTitleProps) {
   const slug = slugify(title)
-  const id = slug === "about" ? "about-heading" : slug
+  const elementId = id ?? (slug === "about" ? "about-heading" : slug)
 
   return (
     <div
@@ -16,8 +17,8 @@ export function HeaderTitle({ title, className }: HeaderTitleProps) {
       )}
     >
       <h2
-        className="text-primary/90 p-2 text-xl font-bold md:text-2xl scroll-mt-16"
-        id={id}
+        className="text-primary/90 scroll-mt-16 p-2 text-xl font-bold md:text-2xl"
+        id={elementId}
       >
         {title}
       </h2>
