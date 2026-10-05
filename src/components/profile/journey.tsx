@@ -13,7 +13,7 @@ export function Journey() {
     >
       <HeaderTitle title="Journey" id="journey-heading" />
       <div className="p-3 sm:p-4">
-        <ol className="flex flex-col gap-8 sm:gap-10">
+        <ol className="flex flex-col gap-10 sm:gap-14">
           {JOURNEY.map((item, index) => (
             <JourneyItem
               key={item.id}

@@ -103,6 +103,7 @@ const ProjectPage = async ({
               key={item.name}
               href={item.href}
               target="_blank"
+              rel="noopener noreferrer"
               className="border-edge group relative flex w-1/2 cursor-pointer flex-row rounded-sm border-[1px] border-dashed"
             >
               <div

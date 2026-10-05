@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { motion, AnimatePresence } from "motion/react"
 import {
   Tooltip,
   TooltipContent,
@@ -10,48 +11,69 @@ import type { Project } from "@/data/projects"
 import { PROJECTS } from "@/data/projects"
 import { cn } from "@/lib/utils"
 
-import { ArrowRight, ChevronDown, GithubIcon, LinkIcon } from "lucide-react"
+import { ArrowRight, ArrowUp, GithubIcon, LinkIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "../ui/button"
 import { CardDescription } from "../ui/card"
 import { HeaderTitle } from "./header-title"
 
+const INITIAL_FEATURED_COUNT = 2
+
 export function Projects() {
-  const [showAll, setShowAll] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
   if (!PROJECTS.length) return null
 
-  const visibleProjects = showAll ? PROJECTS : PROJECTS.slice(0, 4)
+  const featuredProjects = PROJECTS.slice(0, INITIAL_FEATURED_COUNT)
+  const additionalProjects = PROJECTS.slice(INITIAL_FEATURED_COUNT)
+  const hasMoreProjects = additionalProjects.length > 0
 
   return (
-    <>
-      <section className="w-full">
-        <HeaderTitle title="Projects" />
-        <div className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2">
-          {visibleProjects.map((project) => (
-            <SingleProject key={project.title} project={project} />
-          ))}
-        </div>
-        {PROJECTS.length > 4 && (
-          <div className="flex justify-center pt-2 pb-6">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setShowAll((prev) => !prev)}
-              className="group flex cursor-pointer items-center gap-1.5 px-4 py-2 text-sm font-medium transition-all"
+    <section id="projects" className="w-full scroll-mt-16">
+      <HeaderTitle title="Projects" />
+      <div className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2">
+        {featuredProjects.map((project) => (
+          <SingleProject key={project.title} project={project} />
+        ))}
+      </div>
+
+      {hasMoreProjects && (
+        <AnimatePresence initial={false}>
+          {isExpanded && (
+            <motion.div
+              key="additional-projects"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="overflow-hidden"
             >
-              <span>{showAll ? "Less" : "More"}</span>
-              <ChevronDown
-                className={cn(
-                  "size-4 transition-transform duration-300",
-                  showAll && "rotate-180"
-                )}
-              />
-            </Button>
-          </div>
-        )}
-      </section>
-    </>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 pb-2">
+                {additionalProjects.map((project) => (
+                  <SingleProject key={project.title} project={project} />
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
+
+      {hasMoreProjects && (
+        <div className="flex justify-center pt-2 pb-6">
+          <button
+            type="button"
+            onClick={() => setIsExpanded((prev) => !prev)}
+            className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-border/80 bg-background/60 hover:bg-accent hover:border-foreground/30 px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <span>{isExpanded ? "Show Less" : "View More Projects"}</span>
+            {isExpanded ? (
+              <ArrowUp className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5" />
+            ) : (
+              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+            )}
+          </button>
+        </div>
+      )}
+    </section>
   )
 }
 
@@ -163,3 +185,4 @@ export function SingleProject({ project }: { project: Project }) {
     </div>
   )
 }
+

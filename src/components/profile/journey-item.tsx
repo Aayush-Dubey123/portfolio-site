@@ -4,7 +4,6 @@ import { useState } from "react"
 import Image from "next/image"
 import { ArrowUpRight, ImageIcon } from "lucide-react"
 import { motion, useReducedMotion } from "motion/react"
-import { Badge } from "@/components/ui/badge"
 import type { JourneyItem as JourneyItemType } from "@/data/journey"
 import { cn } from "@/lib/utils"
 
@@ -23,8 +22,6 @@ export function JourneyItem({
   const shouldReduceMotion = useReducedMotion()
 
   const fitMode = item.imageFit ?? "cover"
-  const yearMatch = item.date.match(/\b\d{4}\b/g)
-  const watermarkYear = yearMatch ? yearMatch[yearMatch.length - 1] : item.date
 
   return (
     <motion.li
@@ -34,163 +31,135 @@ export function JourneyItem({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.35, ease: "easeOut" }}
-      className="group/row relative list-none pl-7 sm:pl-8"
+      className="group/row relative list-none pl-7 sm:pl-9"
     >
-      {/* Timeline spine and vertically centered dot */}
+      {/* Timeline spine line and node dot */}
       <div
-        className="absolute top-0 bottom-0 left-0 flex w-6 justify-center"
+        className="absolute top-0 bottom-0 left-0 flex w-5 sm:w-6 justify-center"
         aria-hidden="true"
       >
-        {/* Continuous timeline line connecting between rows */}
+        {/* Continuous timeline line */}
         <div
           className={cn(
-            "bg-border/80 absolute w-px",
-            isFirst ? "top-1/2" : "top-0",
-            !isLast ? "bottom-[-32px] sm:bottom-[-40px]" : "bottom-1/2"
+            "bg-border/60 absolute w-[2px]",
+            isFirst ? "top-3.5" : "top-0",
+            !isLast ? "bottom-[-40px] sm:bottom-[-56px]" : "bottom-3.5"
           )}
         />
 
-        {/* Small accent-colored dot vertically centered on row */}
+        {/* Timeline node dot aligned with date badge level */}
         <div
           className={cn(
-            "absolute top-1/2 flex shrink-0 -translate-y-1/2 items-center justify-center rounded-full transition-colors",
+            "absolute top-3.5 z-10 flex shrink-0 items-center justify-center rounded-full border-2 border-background shadow-xs transition-colors",
             isNewest
-              ? "bg-primary ring-primary/25 size-3 shadow-xs ring-4"
-              : "bg-primary/75 ring-primary/10 size-2.5 ring-4"
+              ? "bg-foreground size-3.5 ring-4 ring-primary/20"
+              : "bg-muted-foreground/80 size-3"
           )}
-        >
-          {/* Slow, subtle pulse for the newest entry */}
-          {isNewest && !shouldReduceMotion && (
-            <motion.span
-              className="bg-primary/25 absolute -inset-1 rounded-full"
-              animate={{ scale: [1, 1.5, 1], opacity: [0.45, 0.08, 0.45] }}
-              transition={{
-                duration: 2.8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              aria-hidden="true"
-            />
-          )}
-        </div>
+        />
       </div>
 
-      {/* Row grid with items-stretch ensuring content card and image frame are equal height */}
-      <div className="grid min-h-[300px] grid-cols-1 items-stretch gap-4 md:min-h-[320px] md:grid-cols-2 md:gap-6">
-        {/* LEFT: Content card with 2px accent left border, generous padding, vertically centered content */}
-        <div className="border-border border-l-primary/75 bg-card/60 md:hover:border-foreground/30 relative flex h-full flex-col justify-between overflow-hidden rounded-[10px] border border-l-2 p-6 transition-all duration-300 sm:p-8 md:hover:-translate-y-0.5 md:hover:shadow-sm">
-          {/* Year Watermark: faint, large watermark in top-right corner at ~5% opacity */}
-          <span
-            className="text-foreground pointer-events-none absolute top-4 right-6 z-0 text-5xl leading-none font-black tracking-tighter opacity-[0.05] select-none sm:text-6xl dark:opacity-[0.06]"
-            aria-hidden="true"
-          >
-            {watermarkYear}
-          </span>
-          {/* Top & Middle Content (vertically centered in remaining space) */}
-          <div className="z-10 my-auto flex flex-1 flex-col justify-center gap-3 py-1">
-            <div>
-              <Badge
-                variant="outline"
-                className="border-primary/40 text-primary bg-primary/5 dark:bg-primary/10 text-xs font-medium"
-              >
-                <time dateTime={item.date}>{item.date}</time>
-              </Badge>
-            </div>
-
-            <h3 className="text-primary text-xl leading-snug font-semibold tracking-tight sm:text-2xl">
-              {item.title}
-            </h3>
-
-            <p className="text-muted-foreground text-sm leading-relaxed sm:text-base">
-              {item.description}
-            </p>
+      {/* Row content grid: Left clean text, Right rounded image */}
+      <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8">
+        {/* LEFT: Clean text content without card box */}
+        <div className="flex flex-col justify-center py-1">
+          {/* Date Badge */}
+          <div className="mb-3">
+            <span className="inline-flex items-center rounded-full bg-secondary/80 px-3.5 py-1 text-xs font-medium text-secondary-foreground border border-border/40">
+              <time dateTime={item.date}>{item.date}</time>
+            </span>
           </div>
 
-          {/* Bottom pinned content (tags and link) */}
-          <div className="z-10 mt-auto flex flex-col gap-3 pt-4">
-            {item.tags && item.tags.length > 0 && (
-              <div className="flex flex-wrap gap-1.5">
-                {item.tags.map((tag) => (
-                  <Badge
-                    key={tag}
-                    variant="outline"
-                    className="text-muted-foreground text-[11px] font-normal"
-                  >
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            )}
+          {/* Title */}
+          <h3 className="text-foreground text-xl font-bold tracking-tight leading-snug sm:text-2xl mb-3">
+            {item.title}
+          </h3>
 
-            {item.link && (
-              <div className="pt-0.5">
-                <a
-                  href={item.link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/link text-foreground hover:text-primary focus-visible:ring-ring inline-flex items-center gap-1.5 rounded-sm text-xs font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
+          {/* Description */}
+          <p className="text-muted-foreground text-sm leading-relaxed sm:text-base mb-4">
+            {item.description}
+          </p>
+
+          {/* Tags */}
+          {item.tags && item.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-3">
+              {item.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center rounded-full bg-secondary/50 px-3 py-1 text-xs font-medium text-muted-foreground border border-border/30"
                 >
-                  <span>{item.link.label}</span>
-                  <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                  <span className="sr-only">(opens in a new tab)</span>
-                </a>
-              </div>
-            )}
-          </div>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Link */}
+          {item.link && (
+            <div className="pt-1">
+              <a
+                href={item.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/link text-foreground hover:text-primary focus-visible:ring-ring inline-flex items-center gap-1.5 rounded-sm text-xs font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <span>{item.link.label}</span>
+                <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            </div>
+          )}
         </div>
 
-        {/* RIGHT: Image frame matching card height with items-stretch */}
-        <div className="border-border flex h-full min-h-[260px] w-full rounded-[10px] border p-[4px] md:min-h-[320px]">
-          <div className="bg-muted border-border relative flex h-full min-h-[260px] w-full items-center justify-center overflow-hidden rounded-[6px] border select-none md:min-h-[310px]">
-            {!hasImageError ? (
-              fitMode === "contain" ? (
-                <>
-                  {/* Backdrop layer with reduced blur and darkened overlay */}
-                  <div
-                    className="pointer-events-none absolute inset-0 overflow-hidden select-none"
-                    aria-hidden="true"
-                  >
+        {/* RIGHT: Image container with rounded corners */}
+        <div className="relative w-full aspect-[16/10] sm:aspect-auto md:h-full min-h-[220px] sm:min-h-[260px] overflow-hidden rounded-2xl border border-border/40 bg-muted/30 group-hover/row:border-border/80 transition-colors select-none">
+          {!hasImageError ? (
+            fitMode === "contain" ? (
+              <>
+                {/* Ambient halo backdrop layer */}
+                <div
+                  className="pointer-events-none absolute inset-0 overflow-hidden select-none"
+                  aria-hidden="true"
+                >
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 540px"
+                    className="scale-120 object-cover opacity-45 blur-md dark:opacity-35"
+                  />
+                  <div className="bg-background/60 absolute inset-0 dark:bg-black/60" />
+                </div>
+
+                {/* Foreground image centered with contain fit */}
+                <div className="relative z-10 flex h-full w-full items-center justify-center p-4 select-none">
+                  <div className="relative flex h-full w-full items-center justify-center">
                     <Image
                       src={item.image}
-                      alt=""
+                      alt={item.imageAlt}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
-                      className="scale-110 object-cover opacity-40 blur-sm dark:opacity-30"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 540px"
+                      className="max-h-[94%] max-w-[94%] rounded-lg object-contain drop-shadow-xl transition-transform duration-500 ease-out md:group-hover/row:scale-[1.03]"
+                      onError={() => setHasImageError(true)}
                     />
-                    <div className="bg-background/55 absolute inset-0 dark:bg-black/65" />
                   </div>
-
-                  {/* Foreground image filling ~92% height in object-contain */}
-                  <div className="relative z-10 flex h-full w-full items-center justify-center p-3 select-none">
-                    <div className="relative flex h-full w-full items-center justify-center">
-                      <Image
-                        src={item.image}
-                        alt={item.imageAlt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
-                        className="max-h-[92%] max-w-[92%] rounded-md object-contain drop-shadow-md transition-transform duration-500 ease-out md:group-hover/row:scale-[1.03]"
-                        onError={() => setHasImageError(true)}
-                      />
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <Image
-                  src={item.image}
-                  alt={item.imageAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
-                  className="object-cover transition-transform duration-500 ease-out md:group-hover/row:scale-[1.03]"
-                  onError={() => setHasImageError(true)}
-                />
-              )
+                </div>
+              </>
             ) : (
-              <div className="bg-muted/50 text-muted-foreground flex h-full w-full flex-col items-center justify-center gap-2 p-4 text-center">
-                <ImageIcon className="size-8 opacity-40" />
-                <p className="text-xs font-medium opacity-70">{item.title}</p>
-              </div>
-            )}
-          </div>
+              <Image
+                src={item.image}
+                alt={item.imageAlt}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 540px"
+                className="object-cover transition-transform duration-500 ease-out md:group-hover/row:scale-[1.03]"
+                onError={() => setHasImageError(true)}
+              />
+            )
+          ) : (
+            <div className="bg-muted/50 text-muted-foreground flex h-full w-full flex-col items-center justify-center gap-2 p-4 text-center min-h-[220px]">
+              <ImageIcon className="size-8 opacity-40" />
+              <p className="text-xs font-medium opacity-70">{item.title}</p>
+            </div>
+          )}
         </div>
       </div>
     </motion.li>

@@ -1,6 +1,7 @@
 import { About } from "@/components/profile/about"
 import { Blogs } from "@/components/profile/blogs"
 import { Experience } from "@/components/profile/experience"
+import { GitHubContributions } from "@/components/profile/github-contributions"
 import { Journey } from "@/components/profile/journey"
 import { ProfileHeader } from "@/components/profile/profile-header"
 import { Projects } from "@/components/profile/projects"
@@ -32,6 +33,9 @@ const Page = () => {
           <Experience />
         </>
       )}
+
+      <Separator />
+      <GitHubContributions />
 
       {JOURNEY.length > 0 && (
         <>

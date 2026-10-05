@@ -1,6 +1,6 @@
 "use client"
 
-import { USER } from "@/data"
+import { AdMonogram } from "../profile/ad-monogram"
 import { NAV_ITEMS } from "@/data/nav-items"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
@@ -26,10 +26,10 @@ export function SiteHeader() {
                   window.scrollTo({ top: 0, behavior: "smooth" })
                 }
               }}
+              aria-label="Home"
+              className="flex items-center"
             >
-              <h2 className="text-primary font-bold sm:text-xl">
-                {USER.name.toUpperCase()}
-              </h2>
+              <AdMonogram className="size-8 sm:size-9" />
             </Link>
             <ul className="flex items-center gap-x-3">
               {NAV_ITEMS.map((item, index) => {
@@ -77,10 +77,10 @@ export function SiteHeader() {
                   window.scrollTo({ top: 0, behavior: "smooth" })
                 }
               }}
+              aria-label="Home"
+              className="flex items-center"
             >
-              <span className="text-primary font-bold text-sm tracking-wide">
-                {USER.name}
-              </span>
+              <AdMonogram className="size-8" />
             </Link>
             <ThemeSwitcher />
           </div>
@@ -89,3 +89,4 @@ export function SiteHeader() {
     </header>
   )
 }
+

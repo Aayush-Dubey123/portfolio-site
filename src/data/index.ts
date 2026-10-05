@@ -1,5 +1,6 @@
 export * from "./blogs"
 export * from "./experience"
+export * from "./github-contributions"
 export * from "./journey"
 export * from "./nav-items"
 export * from "./projects"
