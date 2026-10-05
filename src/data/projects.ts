@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
       "Full-stack food ordering platform covering browsing, order placement, order tracking, customer feedback workflows, and inventory-sales integration.",
     image: "/assets/golden.png",
     darkModeImage: "/assets/golden.png",
-    githubLink: "https://github.com/Aayush-Dubey123/food-ordering-system",
+    githubLink: "https://github.com/Aayush-Dubey123/golden",
     liveLink: "https://golden-gold-zeta.vercel.app/",
     skills: [
       "React",
