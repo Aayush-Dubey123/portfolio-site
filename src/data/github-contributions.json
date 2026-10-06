@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-05T16:03:19.822Z",
+  "updatedAt": "2026-10-06T02:45:51.534Z",
   "username": "Aayush-Dubey123",
-  "totalContributions": 173,
+  "totalContributions": 175,
   "weeks": [
     {
       "days": [
@@ -2405,9 +2405,15 @@
         },
         {
           "date": "2026-10-05",
+          "count": 2,
+          "level": 1,
+          "weekday": 1
+        },
+        {
+          "date": "2026-10-06",
           "count": 0,
           "level": 0,
-          "weekday": 1
+          "weekday": 2
         }
       ]
     }
@@ -2416,25 +2422,25 @@
     {
       "name": "Oct",
       "year": 2025,
-      "firstDay": "2025-10-05",
+      "firstDay": "2025-10-01",
       "totalWeeks": 4
     },
     {
       "name": "Nov",
       "year": 2025,
-      "firstDay": "2025-11-02",
+      "firstDay": "2025-11-01",
       "totalWeeks": 5
     },
     {
       "name": "Dec",
       "year": 2025,
-      "firstDay": "2025-12-07",
+      "firstDay": "2025-12-01",
       "totalWeeks": 4
     },
     {
       "name": "Jan",
       "year": 2026,
-      "firstDay": "2026-01-04",
+      "firstDay": "2026-01-01",
       "totalWeeks": 4
     },
     {
@@ -2452,43 +2458,43 @@
     {
       "name": "Apr",
       "year": 2026,
-      "firstDay": "2026-04-05",
+      "firstDay": "2026-04-01",
       "totalWeeks": 4
     },
     {
       "name": "May",
       "year": 2026,
-      "firstDay": "2026-05-03",
+      "firstDay": "2026-05-01",
       "totalWeeks": 5
     },
     {
       "name": "Jun",
       "year": 2026,
-      "firstDay": "2026-06-07",
+      "firstDay": "2026-06-01",
       "totalWeeks": 4
     },
     {
       "name": "Jul",
       "year": 2026,
-      "firstDay": "2026-07-05",
+      "firstDay": "2026-07-01",
       "totalWeeks": 4
     },
     {
       "name": "Aug",
       "year": 2026,
-      "firstDay": "2026-08-02",
+      "firstDay": "2026-08-01",
       "totalWeeks": 5
     },
     {
       "name": "Sep",
       "year": 2026,
-      "firstDay": "2026-09-06",
+      "firstDay": "2026-09-01",
       "totalWeeks": 4
     },
     {
       "name": "Oct",
       "year": 2026,
-      "firstDay": "2026-10-04",
+      "firstDay": "2026-10-01",
       "totalWeeks": 1
     }
   ]
