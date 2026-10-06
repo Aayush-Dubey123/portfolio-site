@@ -3,16 +3,65 @@ import { Separator } from "@/components/profile/separator"
 import { BackButton } from "@/components/site/component-info"
 import { ContainerWrapper } from "@/components/site/container"
 import { Card } from "@/components/ui/card"
-import { PROJECTS } from "@/data"
+import { PROJECTS, SITE_INFO } from "@/data"
 import { cn } from "@/lib/utils"
-import { ArrowUpRight, GithubIcon, LinkIcon } from "lucide-react"
-
+import { ArrowRight, ArrowUpRight, GithubIcon, LinkIcon } from "lucide-react"
+import type { Metadata } from "next"
+import Link from "next/link"
 import Image from "next/image"
 
 export function generateStaticParams() {
   return PROJECTS.map((project) => ({
     href: project.href.replace(/^\/projects\//, ""),
   }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ href: string }>
+}): Promise<Metadata> {
+  const resolvedParams = await params
+  const href = resolvedParams?.href || "warehouse-management-system"
+  const project = PROJECTS.find((project) => project.href.endsWith(href))
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      description: "The requested project could not be found.",
+    }
+  }
+
+  const title = `${project.title} | Aayush Dubey`
+  const description = `${project.title} — ${project.description}`
+  const canonicalUrl = `${SITE_INFO.url}${project.href}`
+
+  return {
+    title: project.title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: "article",
+      images: [
+        {
+          url: project.image,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} - Project by Aayush Dubey`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [project.image],
+    },
+  }
 }
 
 const ProjectPage = async ({
@@ -61,14 +110,14 @@ const ProjectPage = async ({
               "bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] transition-all duration-300 [--pattern-foreground:var(--color-edge)]/0 group-hover:[--pattern-foreground:var(--color-border)]/90"
             )}
           >
-            <h1 className="text-muted-foreground absolute top-3 left-2 text-xs font-medium transition-all duration-300 group-hover:left-1/2 group-hover:-translate-x-1/2 sm:text-base">
+            <span className="text-muted-foreground absolute top-3 left-2 text-xs font-medium transition-all duration-300 group-hover:left-1/2 group-hover:-translate-x-1/2 sm:text-base">
               {project.title}
-            </h1>
+            </span>
             <div className="bg-background absolute bottom-0 left-1/2 h-[80%] w-[90%] -translate-x-1/2 rounded-t-[6px] p-[2px] pb-0 transition-all duration-300 group-hover:h-[85%] sm:h-[90%]">
               <div className="h-full w-full overflow-hidden rounded-t-[4px]">
                 <div className="hidden dark:block">
                   <Image
-                    alt="Dark Screenshot"
+                    alt={`${project.title} preview screenshot (dark mode) - Aayush Dubey`}
                     loading="lazy"
                     width="1000"
                     height="1000"
@@ -81,7 +130,7 @@ const ProjectPage = async ({
                 <div className="block dark:hidden">
                   <Image
                     src={project.image}
-                    alt="Light Screenshot"
+                    alt={`${project.title} preview screenshot (light mode) - Aayush Dubey`}
                     loading="lazy"
                     width="1000"
                     height="1000"
@@ -133,12 +182,9 @@ const ProjectPage = async ({
       <Separator />
       {/* Bottom Section */}
       <div className="flex flex-col gap-2 p-2 sm:p-4">
-        <a
-          href={project.liveLink}
-          className="text-primary/90 text-base font-bold sm:text-xl md:text-2xl"
-        >
+        <h1 className="text-primary/90 text-base font-bold sm:text-xl md:text-2xl">
           {project.title}
-        </a>
+        </h1>
         <p className="text-primary/90 font-mono text-xs sm:text-sm">
           {project.description}
         </p>
@@ -154,6 +200,37 @@ const ProjectPage = async ({
           )}
         </div>
         <SkillBadgeList skills={project.skills} />
+      </div>
+      <Separator />
+      {/* Internal linking: Other Projects by Aayush Dubey */}
+      <div className="flex flex-col gap-3 p-2 sm:p-4">
+        <h2 className="text-primary/90 text-sm font-semibold tracking-wide uppercase">
+          More Projects by Aayush Dubey
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          {PROJECTS.filter((p) => !p.href.endsWith(href))
+            .slice(0, 3)
+            .map((p) => (
+              <Link
+                key={p.href}
+                href={p.href}
+                className="border-edge group flex flex-col justify-between rounded-md border-[1px] border-dashed p-3 transition-colors hover:border-foreground/30 hover:bg-accent/40"
+              >
+                <div>
+                  <p className="text-foreground text-sm font-medium group-hover:text-primary transition-colors">
+                    {p.title}
+                  </p>
+                  <p className="text-muted-foreground line-clamp-2 text-xs mt-1">
+                    {p.description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-1 text-xs text-muted-foreground mt-3 group-hover:text-foreground">
+                  <span>Explore project</span>
+                  <ArrowRight className="size-3 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </div>
+              </Link>
+            ))}
+        </div>
       </div>
       <Separator />
     </ContainerWrapper>

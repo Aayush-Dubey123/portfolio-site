@@ -10,7 +10,7 @@ export const USER = {
   socials: [
     {
       name: "Gmail",
-      href: "mailto:aayushdubey2300@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=aayushdubey2300@gmail.com",
       icon: "/assets/gmail.webp",
       username: "aayushdubey2300@gmail.com",
     },

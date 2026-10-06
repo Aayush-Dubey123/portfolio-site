@@ -1,5 +1,6 @@
 import { About } from "@/components/profile/about"
 import { Blogs } from "@/components/profile/blogs"
+import { Connect } from "@/components/profile/connect"
 import { Experience } from "@/components/profile/experience"
 import { GitHubContributions } from "@/components/profile/github-contributions"
 import { Journey } from "@/components/profile/journey"
@@ -53,6 +54,9 @@ const Page = () => {
           <Blogs />
         </>
       )}
+
+      <Separator />
+      <Connect />
 
       <Separator />
       <AnimatingScrollBars />

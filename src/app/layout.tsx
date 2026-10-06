@@ -25,32 +25,35 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    template: SITE_INFO.siteName,
-    default: SITE_INFO.siteName,
+    template: "%s | Aayush Dubey",
+    default: "Aayush Dubey | Software & Systems Engineer",
   },
   description: SITE_INFO.description,
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: USER.fullName,
+      name: "Aayush Dubey",
       url: SITE_INFO.url,
     },
   ],
-  creator: USER.fullName,
+  creator: "Aayush Dubey",
+  publisher: "Aayush Dubey",
   openGraph: {
-    siteName: SITE_INFO.siteName,
-    url: "/",
+    siteName: "Aayush Dubey Portfolio",
+    title: "Aayush Dubey | Software & Systems Engineer",
+    description: SITE_INFO.description,
+    url: SITE_INFO.url,
     type: "profile",
     firstName: USER.firstName,
     lastName: USER.lastName,
     username: USER.username,
-    gender: USER.gender,
+    gender: "male",
     images: [
       {
         url: SITE_INFO.ogImage,
         width: 1200,
         height: 630,
-        alt: SITE_INFO.name,
+        alt: "Aayush Dubey - Software & Systems Engineer Portfolio",
       },
     ],
     locale: "en_US",
@@ -61,12 +64,17 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_INFO.siteName,
+    title: "Aayush Dubey | Software & Systems Engineer",
     description: SITE_INFO.description,
+    creator: "@Aayush-Dubey123",
+    site: "@Aayush-Dubey123",
     images: [SITE_INFO.ogImage],
   },
   icons: {
@@ -80,6 +88,35 @@ export const metadata: Metadata = {
   },
 }
 
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://ayushdubey.studio/#person",
+      name: "Aayush Dubey",
+      alternateName: "Aayush Chandrashekhar Dubey",
+      url: "https://ayushdubey.studio",
+      image: "https://ayushdubey.studio/assets/profile-aavatar.jpg",
+      jobTitle: "Software & Systems Engineer",
+      email: "mailto:aayushdubey2300@gmail.com",
+      sameAs: [
+        "https://www.linkedin.com/in/aayush-dubey-ab19a72b9/",
+        "https://github.com/Aayush-Dubey123",
+      ],
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://ayushdubey.studio/#profilepage",
+      url: "https://ayushdubey.studio",
+      name: "Aayush Dubey | Software & Systems Engineer",
+      mainEntity: {
+        "@id": "https://ayushdubey.studio/#person",
+      },
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,6 +127,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} w-full antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personStructuredData),
+          }}
+        />
         <PageViewAnalytics />
         <TooltipProvider>
           <ThemeProvider

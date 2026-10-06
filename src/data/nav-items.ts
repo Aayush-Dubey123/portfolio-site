@@ -15,4 +15,8 @@ export const NAV_ITEMS = [
     name: "Tech Stack",
     href: "/#tech-stack",
   },
+  {
+    name: "Connect",
+    href: "/#connect",
+  },
 ]

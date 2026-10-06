@@ -19,7 +19,7 @@ export function ProfileHeader() {
           <div className="relative flex w-full justify-center sm:justify-start">
             <Image
               src={USER.avatar}
-              alt={`${USER.name}'s avatar`}
+              alt="Aayush Dubey - Software & Systems Engineer"
               width={300}
               height={300}
               fetchPriority="high"
@@ -77,7 +77,7 @@ export function ProfileHeader() {
                     >
                       <Image
                         src={item.icon}
-                        alt={item.name}
+                        alt={`${item.name} - Aayush Dubey`}
                         width={48}
                         height={48}
                         fetchPriority="high"

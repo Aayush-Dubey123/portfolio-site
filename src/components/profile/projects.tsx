@@ -92,14 +92,14 @@ export function SingleProject({ project }: { project: Project }) {
               "bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] transition-all duration-300 [--pattern-foreground:var(--color-edge)]/0 group-hover:[--pattern-foreground:var(--color-border)]/90"
             )}
           >
-            <h1 className="text-muted-foreground absolute top-2 left-2 text-xs font-medium transition-all duration-300 group-hover:left-1/2 group-hover:-translate-x-1/2">
+            <span className="text-muted-foreground absolute top-2 left-2 text-xs font-medium transition-all duration-300 group-hover:left-1/2 group-hover:-translate-x-1/2">
               {project.title}
-            </h1>
+            </span>
             <div className="bg-background absolute bottom-0 left-1/2 h-[80%] w-[80%] -translate-x-1/2 rounded-t-[6px] p-[2px] pb-0 transition-all duration-300 group-hover:h-[75%]">
               <div className="h-full w-full overflow-hidden rounded-t-[4px]">
                 <div className="hidden dark:block">
                   <Image
-                    alt="Dark Screenshot"
+                    alt={`${project.title} preview screenshot (dark mode) - Aayush Dubey`}
                     loading="lazy"
                     width="1000"
                     height="1000"
@@ -112,7 +112,7 @@ export function SingleProject({ project }: { project: Project }) {
                 <div className="block dark:hidden">
                   <Image
                     src={project.image}
-                    alt="Light Screenshot"
+                    alt={`${project.title} preview screenshot (light mode) - Aayush Dubey`}
                     loading="lazy"
                     width="1000"
                     height="1000"

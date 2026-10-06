@@ -3,7 +3,7 @@ import type { NextConfig } from "next"
 import createMDX from "@next/mdx"
 
 const nextConfig: NextConfig = {
-  output: "export",
+  ...(process.env.BUILD_STATIC_EXPORT === "true" ? { output: "export" } : {}),
   images: {
     unoptimized: true,
   },
