@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
       "End-to-end warehouse platform spanning 5+ core workflows—inventory, orders, receiving, picking, and dispatch—with dedicated role-based access and AI/MCP integration.",
     image: "/assets/wms.png",
     darkModeImage: "/assets/wms.png",
-    githubLink: "https://github.com/Aayush-Dubey123/warehouse-management-system",
+    githubLink: "https://github.com/Aayush-Dubey123/WMS",
     liveLink: "https://wms-indol-six.vercel.app",
     skills: [
       "FastAPI",
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
       "AI-assisted hospital readiness and appointment platform featuring conversational booking, Telegram MCP integration, and CLI readiness diagnostics.",
     image: "/assets/hospital-system.png",
     darkModeImage: "/assets/hospital-system.png",
-    githubLink: "https://github.com/Aayush-Dubey123/hospital-management-system",
+    githubLink: "https://github.com/Aayush-Dubey123/booking-system---hospital",
     liveLink: "https://booking-system-hospital.vercel.app",
     skills: [
       "FastAPI",
