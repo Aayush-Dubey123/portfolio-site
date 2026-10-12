@@ -104,6 +104,21 @@ const personStructuredData = {
         "https://www.linkedin.com/in/aayush-dubey-ab19a72b9/",
         "https://github.com/Aayush-Dubey123",
       ],
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "St. Vincent Pallotti College of Engineering and Technology, Nagpur",
+      },
+      knowsAbout: [
+        "Full-Stack Web Development",
+        "Cloud Computing",
+        "AI Systems & MCP",
+        "FastAPI",
+        "React",
+        "Next.js",
+        "Python",
+        "PostgreSQL",
+        "MongoDB",
+      ],
     },
     {
       "@type": "ProfilePage",

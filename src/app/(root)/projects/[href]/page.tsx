@@ -97,8 +97,38 @@ const ProjectPage = async ({
       icon: <LinkIcon />,
     },
   ].filter((item) => Boolean(item.href))
+
+  const canonicalUrl = `${SITE_INFO.url}${project.href}`
+  const projectStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.title,
+    description: project.description,
+    url: project.liveLink || canonicalUrl,
+    applicationCategory: "WebApplication",
+    operatingSystem: "All",
+    author: {
+      "@type": "Person",
+      name: "Aayush Dubey",
+      url: SITE_INFO.url,
+      sameAs: [
+        "https://www.linkedin.com/in/aayush-dubey-ab19a72b9/",
+        "https://github.com/Aayush-Dubey123",
+      ],
+    },
+    ...(project.githubLink ? { codeRepository: project.githubLink } : {}),
+    ...(project.liveLink ? { installUrl: project.liveLink } : {}),
+    image: `${SITE_INFO.url}${project.image}`,
+  }
+
   return (
     <ContainerWrapper>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectStructuredData),
+        }}
+      />
       <Separator />
       <BackButton title="Projects" href="/" />
       <Separator />
