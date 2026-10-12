@@ -1,54 +1,8 @@
 {
-  "updatedAt": "2026-10-06T04:05:28.020Z",
+  "updatedAt": "2026-10-12T03:33:05.498Z",
   "username": "Aayush-Dubey123",
-  "totalContributions": 175,
+  "totalContributions": 196,
   "weeks": [
-    {
-      "days": [
-        {
-          "date": "2025-10-05",
-          "count": 0,
-          "level": 0,
-          "weekday": 0
-        },
-        {
-          "date": "2025-10-06",
-          "count": 0,
-          "level": 0,
-          "weekday": 1
-        },
-        {
-          "date": "2025-10-07",
-          "count": 0,
-          "level": 0,
-          "weekday": 2
-        },
-        {
-          "date": "2025-10-08",
-          "count": 0,
-          "level": 0,
-          "weekday": 3
-        },
-        {
-          "date": "2025-10-09",
-          "count": 0,
-          "level": 0,
-          "weekday": 4
-        },
-        {
-          "date": "2025-10-10",
-          "count": 0,
-          "level": 0,
-          "weekday": 5
-        },
-        {
-          "date": "2025-10-11",
-          "count": 0,
-          "level": 0,
-          "weekday": 6
-        }
-      ]
-    },
     {
       "days": [
         {
@@ -2405,15 +2359,55 @@
         },
         {
           "date": "2026-10-05",
-          "count": 2,
-          "level": 1,
+          "count": 3,
+          "level": 2,
           "weekday": 1
         },
         {
           "date": "2026-10-06",
+          "count": 8,
+          "level": 4,
+          "weekday": 2
+        },
+        {
+          "date": "2026-10-07",
+          "count": 3,
+          "level": 2,
+          "weekday": 3
+        },
+        {
+          "date": "2026-10-08",
+          "count": 4,
+          "level": 2,
+          "weekday": 4
+        },
+        {
+          "date": "2026-10-09",
+          "count": 1,
+          "level": 1,
+          "weekday": 5
+        },
+        {
+          "date": "2026-10-10",
+          "count": 1,
+          "level": 1,
+          "weekday": 6
+        }
+      ]
+    },
+    {
+      "days": [
+        {
+          "date": "2026-10-11",
+          "count": 3,
+          "level": 2,
+          "weekday": 0
+        },
+        {
+          "date": "2026-10-12",
           "count": 0,
           "level": 0,
-          "weekday": 2
+          "weekday": 1
         }
       ]
     }
@@ -2423,7 +2417,7 @@
       "name": "Oct",
       "year": 2025,
       "firstDay": "2025-10-01",
-      "totalWeeks": 4
+      "totalWeeks": 3
     },
     {
       "name": "Nov",
@@ -2495,7 +2489,7 @@
       "name": "Oct",
       "year": 2026,
       "firstDay": "2026-10-01",
-      "totalWeeks": 1
+      "totalWeeks": 2
     }
   ]
 }
