@@ -1,14 +1,11 @@
-import { SkillBadgeList } from "@/components/profile/experience-item"
-import { Separator } from "@/components/profile/separator"
-import { BackButton } from "@/components/site/component-info"
-import { ContainerWrapper } from "@/components/site/container"
-import { Card } from "@/components/ui/card"
+import { ProjectCardFrame, Separator } from "@/components/profile"
+import { BackButton, ContainerWrapper } from "@/components/site"
+import { Card, SkillBadgeList } from "@/components/ui"
 import { PROJECTS, SITE_INFO } from "@/data"
 import { cn } from "@/lib/utils"
 import { ArrowRight, ArrowUpRight, GithubIcon, LinkIcon } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 
 export function generateStaticParams() {
   return PROJECTS.map((project) => ({
@@ -134,44 +131,12 @@ const ProjectPage = async ({
       <Separator />
       <div className="p-2 md:p-4">
         <Card className={cn("group p-2")}>
-          <div
-            className={cn(
-              "bg-muted border-border relative aspect-video w-full overflow-hidden rounded-[6px] border select-none",
-              "bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] transition-all duration-300 [--pattern-foreground:var(--color-edge)]/0 group-hover:[--pattern-foreground:var(--color-border)]/90"
-            )}
-          >
-            <span className="text-muted-foreground absolute top-3 left-2 text-xs font-medium transition-all duration-300 group-hover:left-1/2 group-hover:-translate-x-1/2 sm:text-base">
-              {project.title}
-            </span>
-            <div className="bg-background absolute bottom-0 left-1/2 h-[80%] w-[90%] -translate-x-1/2 rounded-t-[6px] p-[2px] pb-0 transition-all duration-300 group-hover:h-[85%] sm:h-[90%]">
-              <div className="h-full w-full overflow-hidden rounded-t-[4px]">
-                <div className="hidden dark:block">
-                  <Image
-                    alt={`${project.title} preview screenshot (dark mode) - Aayush Dubey`}
-                    loading="lazy"
-                    width="1000"
-                    height="1000"
-                    decoding="async"
-                    data-nimg="1"
-                    className="h-full w-full object-cover"
-                    src={project.darkModeImage}
-                  />
-                </div>
-                <div className="block dark:hidden">
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} preview screenshot (light mode) - Aayush Dubey`}
-                    loading="lazy"
-                    width="1000"
-                    height="1000"
-                    decoding="async"
-                    data-nimg="1"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProjectCardFrame
+            title={project.title}
+            image={project.image}
+            darkModeImage={project.darkModeImage}
+            innerClassName="w-[90%] sm:h-[90%] group-hover:h-[85%]"
+          />
         </Card>
       </div>
       {/* Links Section */}

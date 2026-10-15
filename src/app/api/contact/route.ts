@@ -175,15 +175,27 @@ export async function POST(req: Request) {
         return NextResponse.json(
           {
             success: false,
-            error: "Unable to send message at the moment. Please try again shortly.",
+            error: "Unable to send message at the moment. Please reach out directly to aayushdubey2300@gmail.com.",
           },
           { status: 502 }
         )
       }
     } else {
-      // In development or when RESEND_API_KEY is pending configuration:
+      // In production without configured key, fail gracefully so sender knows
+      if (process.env.NODE_ENV === "production") {
+        console.error("RESEND_API_KEY environment variable is not configured.")
+        return NextResponse.json(
+          {
+            success: false,
+            error: "Message service is currently not configured. Please contact directly at aayushdubey2300@gmail.com.",
+          },
+          { status: 503 }
+        )
+      }
+
+      // In local development:
       console.log(
-        `[Contact Submission Delivery] Recipient: ${recipientEmail} | Name: ${trimmedName} | Interest: ${trimmedInterest} | Email: ${trimmedEmail || "N/A"}`
+        `[Contact Submission Dev Mode] Recipient: ${recipientEmail} | Name: ${trimmedName} | Interest: ${trimmedInterest} | Email: ${trimmedEmail || "N/A"}`
       )
     }
 

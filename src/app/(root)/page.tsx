@@ -1,15 +1,16 @@
-import { About } from "@/components/profile/about"
-import { Blogs } from "@/components/profile/blogs"
-import { Connect } from "@/components/profile/connect"
-import { Experience } from "@/components/profile/experience"
-import { GitHubContributions } from "@/components/profile/github-contributions"
-import { Journey } from "@/components/profile/journey"
-import { ProfileHeader } from "@/components/profile/profile-header"
-import { Projects } from "@/components/profile/projects"
-import { Separator } from "@/components/profile/separator"
-import { TechStack } from "@/components/profile/tech-stack"
-import { ContainerWrapper } from "@/components/site/container"
-import { AnimatingScrollBars } from "@/components/site/scroll-bars"
+import {
+  About,
+  Blogs,
+  Connect,
+  Experience,
+  GitHubContributions,
+  Journey,
+  ProfileHeader,
+  Projects,
+  Separator,
+  TechStack,
+} from "@/components/profile"
+import { AnimatingScrollBars, ContainerWrapper } from "@/components/site"
 import { BLOGS, EXPERIENCE, JOURNEY, PROJECTS } from "@/data"
 
 const Page = () => {

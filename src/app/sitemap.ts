@@ -1,5 +1,4 @@
-import { SITE_INFO } from "@/data"
-import { PROJECTS } from "@/data/projects"
+import { PROJECTS, SITE_INFO } from "@/data"
 import type { MetadataRoute } from "next"
 
 export const dynamic = "force-static"

@@ -1,8 +1,6 @@
 import { ThemeProvider } from "@/components/providers/theme-provider"
-import { ThemeShortcut } from "@/components/providers/theme-shortcut"
-import { PageViewAnalytics } from "@/components/site/analytics"
-import { Toaster } from "@/components/ui/sonner"
-import { TooltipProvider } from "@/components/ui/tooltip"
+import { PageViewAnalytics } from "@/components/site"
+import { Toaster, TooltipProvider } from "@/components/ui"
 import { SITE_INFO, USER } from "@/data"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
@@ -159,7 +157,6 @@ export default function RootLayout({
           >
             {children}
             <Toaster />
-            <ThemeShortcut />
           </ThemeProvider>
         </TooltipProvider>
         {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (

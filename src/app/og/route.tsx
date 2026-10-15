@@ -1,7 +1,7 @@
 import { USER } from "@/data"
 import { ImageResponse } from "next/og"
 
-export const dynamic = "force-static"
+export const revalidate = 86400
 
 export async function GET(request: Request) {
   try {
