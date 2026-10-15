@@ -7,7 +7,7 @@ export function Experience() {
 
   return (
     <>
-      <section className="w-full">
+      <section id="experience" className="w-full scroll-mt-16">
         <HeaderTitle title="Experience" />
         <div className="grid w-full">
           {EXPERIENCE.map((item) => {

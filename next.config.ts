@@ -1,27 +1,11 @@
 // next.config.ts
 import type { NextConfig } from "next"
-import createMDX from "@next/mdx"
 
 const nextConfig: NextConfig = {
   ...(process.env.BUILD_STATIC_EXPORT === "true" ? { output: "export" } : {}),
   images: {
     unoptimized: true,
   },
-  // Configure `pageExtensions` to include MDX files
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  // Optionally, add any other Next.js config below
-  experimental: {
-    mdxRs: true,
-  },
 }
 
-const withMDX = createMDX({
-  // Add markdown plugins here, as desired
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-})
-
-// Merge MDX config with Next.js config
-export default withMDX(nextConfig)
+export default nextConfig

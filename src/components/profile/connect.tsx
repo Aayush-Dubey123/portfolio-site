@@ -110,7 +110,7 @@ export function Connect() {
 
   return (
     <section id="connect" className="w-full scroll-mt-16">
-      <HeaderTitle title="Let’s Connect" id="connect" />
+      <HeaderTitle title="Let’s Connect" id="connect-heading" />
       <div className="p-3 sm:p-5">
         <div className="mb-4">
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">

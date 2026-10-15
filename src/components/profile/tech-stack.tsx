@@ -6,11 +6,11 @@ import { HeaderTitle } from "./header-title"
 export function TechStack() {
   return (
     <>
-      <section className="w-full">
+      <section id="tech-stack" className="w-full scroll-mt-16">
         <HeaderTitle title="Tech Stack" />
         <div className="my-2 grid w-full grid-cols-4 gap-2 p-2 lg:grid-cols-6">
           {TECH_STACK.map((item) => {
-            const ext = item.ext || (item.key === "antigravity" ? "png" : "svg")
+            const ext = item.ext || "svg"
             return (
               <div
                 key={item.key}

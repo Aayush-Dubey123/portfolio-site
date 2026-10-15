@@ -47,7 +47,6 @@ export function SiteHeader() {
                     >
                       <Link
                         prefetch={false}
-                        key={index}
                         href={item.href}
                         onClick={(e) => {
                           if (item.href === "/#about" && pathname === "/") {

@@ -7,7 +7,7 @@ type HeaderTitleProps = {
 }
 export function HeaderTitle({ title, className, id }: HeaderTitleProps) {
   const slug = slugify(title)
-  const elementId = id ?? (slug === "about" ? "about-heading" : slug)
+  const elementId = id ?? `${slug}-heading`
 
   return (
     <div

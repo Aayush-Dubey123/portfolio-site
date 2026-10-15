@@ -7,24 +7,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.shiki {
-  counter-reset: step;
-  counter-increment: step 0;
-
-  .line {
-    &::before {
-      counter-increment: step;
-      @apply mr-6 inline-block w-4 border-transparent text-right text-neutral-600 content-[counter(step)];
-    }
-  }
-}
-
-/* Hide line numbers when parent wrapper has no-lines class */
-.no-lines .shiki {
-  .line::before {
-    @apply hidden;
-  }
-}
 
 @theme inline {
   --color-background: var(--background);

@@ -15,7 +15,6 @@ import { BLOGS, EXPERIENCE, JOURNEY, PROJECTS } from "@/data"
 const Page = () => {
   return (
     <ContainerWrapper className="">
-      <div id="about" className="scroll-mt-20" />
       <ProfileHeader />
       <Separator />
 
