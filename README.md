@@ -3,7 +3,7 @@
 This is the personal portfolio of **Aayush Chandrashekhar Dubey**.
 
 **Live Portfolio:**  
-https://Aayush-Dubey123.github.io
+https://ayushdubey.studio
 
 ---
 

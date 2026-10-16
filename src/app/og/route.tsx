@@ -6,8 +6,10 @@ export const revalidate = 86400
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url)
-    const title = searchParams.get("title") || USER.name
-    const description = searchParams.get("description") || `Hi, I'm ${USER.firstName}`
+    const rawTitle = searchParams.get("title") || USER.name
+    const rawDescription = searchParams.get("description") || `Hi, I'm ${USER.firstName}`
+    const title = rawTitle.slice(0, 100)
+    const description = rawDescription.slice(0, 250)
 
     return new ImageResponse(
       (

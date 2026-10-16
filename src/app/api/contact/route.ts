@@ -37,6 +37,32 @@ export async function POST(req: Request) {
       req.headers.get("x-real-ip") ||
       "127.0.0.1"
 
+    // Origin / CSRF Protection: Allow production custom domain, Vercel deployments, and local dev
+    const origin = req.headers.get("origin") || req.headers.get("referer")
+    if (origin) {
+      try {
+        const originUrl = new URL(origin)
+        const isAllowedOrigin =
+          originUrl.hostname === "ayushdubey.studio" ||
+          originUrl.hostname.endsWith(".ayushdubey.studio") ||
+          originUrl.hostname.endsWith(".vercel.app") ||
+          originUrl.hostname === "localhost" ||
+          originUrl.hostname === "127.0.0.1"
+
+        if (!isAllowedOrigin) {
+          return NextResponse.json(
+            { success: false, error: "Cross-origin submission not allowed." },
+            { status: 403 }
+          )
+        }
+      } catch {
+        return NextResponse.json(
+          { success: false, error: "Invalid origin header." },
+          { status: 400 }
+        )
+      }
+    }
+
     // Rate limiting check
     if (isRateLimited(clientIp)) {
       return NextResponse.json(
@@ -102,6 +128,16 @@ export async function POST(req: Request) {
       )
     }
 
+    if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail) || trimmedEmail.length > 254) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Please provide a valid email address so I can reply to your inquiry.",
+        },
+        { status: 400 }
+      )
+    }
+
     if (!trimmedInterest || trimmedInterest.length < 2 || trimmedInterest.length > 200) {
       return NextResponse.json(
         {
@@ -117,16 +153,6 @@ export async function POST(req: Request) {
         {
           success: false,
           error: "Please enter a message between 5 and 3,000 characters.",
-        },
-        { status: 400 }
-      )
-    }
-
-    if (trimmedEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Please provide a valid email address.",
         },
         { status: 400 }
       )

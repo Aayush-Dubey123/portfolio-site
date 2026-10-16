@@ -529,8 +529,8 @@ export function Connect() {
       return
     }
 
-    if (trimmedEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
-      setErrorMessage("Please enter a valid email address.")
+    if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      setErrorMessage("Please enter a valid email address so I can write back to you.")
       return
     }
 
@@ -656,11 +656,12 @@ export function Connect() {
                   htmlFor="contact-email"
                   className="text-primary text-xs font-medium uppercase tracking-wider block"
                 >
-                  Email <span className="text-muted-foreground text-[11px] font-normal lowercase">(for reply)</span>
+                  Email <span className="text-destructive">*</span>
                 </label>
                 <input
                   id="contact-email"
                   type="email"
+                  required
                   disabled={isSubmitting}
                   placeholder="your.email@example.com"
                   value={email}
