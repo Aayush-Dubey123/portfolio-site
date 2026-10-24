@@ -273,16 +273,46 @@ export function ProfileHeader() {
         <div className="mx-2 my-2 flex flex-col items-center sm:items-end sm:justify-end">
           <div className="border-edge group relative grid w-full max-w-[260px] cursor-pointer grid-cols-3 rounded-sm sm:w-auto sm:gap-x-6 sm:py-1">
             {USER.socials.map((item) => {
-              const isMail = item.href.startsWith("mailto:")
+              const isConnect =
+                item.name.toLowerCase() === "gmail" ||
+                item.href.includes("connect")
+              const isExternal =
+                !isConnect &&
+                !item.href.startsWith("/#") &&
+                !item.href.startsWith("#")
+
+              const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                if (isConnect) {
+                  const el = document.getElementById("connect")
+                  if (el) {
+                    e.preventDefault()
+                    el.scrollIntoView({ behavior: "smooth" })
+                    window.history.pushState(null, "", "#connect")
+                    const nameInput = document.getElementById("contact-name")
+                    if (nameInput) {
+                      setTimeout(() => {
+                        nameInput.focus({ preventScroll: true })
+                      }, 500)
+                    }
+                  }
+                }
+              }
+
               return (
                 <Tooltip key={item.name}>
                   <TooltipTrigger asChild>
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
-                      target={isMail ? undefined : "_blank"}
-                      rel={isMail ? undefined : "noopener noreferrer"}
-                      className="border-edge flex h-full items-center justify-center overflow-hidden border-dashed p-1.5 [&:not(:first-child)]:border-l-[1px]"
+                      href={isConnect ? "/#connect" : item.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      onClick={handleClick}
+                      aria-label={
+                        isConnect
+                          ? "Navigate to Connect section"
+                          : `${item.name} - Aayush Dubey`
+                      }
+                      className="border-edge flex h-full items-center justify-center overflow-hidden border-dashed p-1.5 [&:not(:first-child)]:border-l-[1px] transition-colors hover:bg-accent/40"
                     >
                       <Image
                         src={item.icon}
@@ -290,15 +320,17 @@ export function ProfileHeader() {
                         width={48}
                         height={48}
                         fetchPriority="high"
-                        className="size-7 rounded-sm"
+                        className="size-7 rounded-sm transition-transform duration-200 group-hover:scale-105"
                       />
-                    </a>
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent
                     className="bg-secondary"
                     arrowClassName="bg-secondary fill-secondary"
                   >
-                    <p className="text-foreground text-sm">{item.name}</p>
+                    <p className="text-foreground text-sm font-medium">
+                      {isConnect ? "Connect" : item.name}
+                    </p>
                   </TooltipContent>
                 </Tooltip>
               )
@@ -318,13 +350,21 @@ export function About() {
   return (
     <section id="about" className="w-full scroll-mt-16">
       <HeaderTitle title="About" />
-      <div className="p-3 sm:p-4">
-        <div className="space-y-3.5 text-muted-foreground text-sm sm:text-base leading-relaxed">
+      <div className="p-3 sm:p-5">
+        <div className="space-y-4 text-justify [text-justify:inter-word] [hyphens:auto] [text-wrap:pretty] text-muted-foreground text-sm sm:text-base leading-relaxed sm:leading-7">
           <p>
-            Hello, and welcome. I’m Aayush Dubey, currently pursuing a B.Tech in Computer Science and Business Systems (CSBS). I have a strong interest in web development and cloud computing, and I enjoy learning through real-world projects and new technologies.
+            Hello, and welcome. I’m Aayush Dubey, currently pursuing a B.Tech in
+            Computer Science and Business Systems (CSBS). I have a strong
+            interest in web development and cloud computing, and I enjoy
+            learning through real-world projects and new technologies.
           </p>
           <p>
-            My academic and internship experiences have given me hands-on exposure to building practical solutions, working with AI-assisted workflows, and exploring modern development and cloud technologies. These experiences have strengthened my technical skills while helping me grow in problem-solving, teamwork, discipline, and adaptability.
+            My academic and internship experiences have given me hands-on
+            exposure to building practical solutions, working with AI-assisted
+            workflows, and exploring modern development and cloud technologies.
+            These experiences have strengthened my technical skills while
+            helping me grow in problem-solving, teamwork, discipline, and
+            adaptability.
           </p>
         </div>
       </div>

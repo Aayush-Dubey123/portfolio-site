@@ -16,7 +16,7 @@ export const USER = {
   socials: [
     {
       name: "Gmail",
-      href: "mailto:aayushdubey2300@gmail.com",
+      href: "/#connect",
       icon: "/assets/gmail.webp",
       username: "aayushdubey2300@gmail.com",
     },

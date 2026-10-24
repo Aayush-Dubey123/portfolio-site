@@ -102,9 +102,19 @@ export function SiteHeader() {
                       prefetch={false}
                       href={item.href}
                       onClick={(e) => {
-                        if (item.href === "/#about" && pathname === "/") {
-                          e.preventDefault()
-                          window.scrollTo({ top: 0, behavior: "smooth" })
+                        if (pathname === "/") {
+                          if (item.href === "/#about") {
+                            e.preventDefault()
+                            window.scrollTo({ top: 0, behavior: "smooth" })
+                          } else if (item.href.startsWith("/#")) {
+                            const id = item.href.slice(2)
+                            const target = document.getElementById(id)
+                            if (target) {
+                              e.preventDefault()
+                              target.scrollIntoView({ behavior: "smooth" })
+                              window.history.pushState(null, "", `#${id}`)
+                            }
+                          }
                         }
                       }}
                       className="hover:text-primary"
@@ -159,9 +169,19 @@ export function SiteHeader() {
                   href={item.href}
                   onClick={(e) => {
                     setMobileMenuOpen(false)
-                    if (item.href === "/#about" && pathname === "/") {
-                      e.preventDefault()
-                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    if (pathname === "/") {
+                      if (item.href === "/#about") {
+                        e.preventDefault()
+                        window.scrollTo({ top: 0, behavior: "smooth" })
+                      } else if (item.href.startsWith("/#")) {
+                        const id = item.href.slice(2)
+                        const target = document.getElementById(id)
+                        if (target) {
+                          e.preventDefault()
+                          target.scrollIntoView({ behavior: "smooth" })
+                          window.history.pushState(null, "", `#${id}`)
+                        }
+                      }
                     }
                   }}
                   className="text-foreground/80 hover:text-foreground hover:bg-accent/30 flex w-full items-center rounded-md px-3 py-2.5 text-sm font-medium transition-colors"
