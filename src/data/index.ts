@@ -160,6 +160,56 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    title: "PrepAI",
+    href: "/projects/prepai",
+    description:
+      "Voice-first technical interview platform featuring adaptive multi-turn probing, real-time MediaPipe face and orientation tracking, and instant diagnostic evaluation reports.",
+    image: "/assets/prepai.png",
+    darkModeImage: "/assets/prepai.png",
+    githubLink: "https://github.com/Aayush-Dubey123/PrepAI",
+    liveLink: "https://prep-ai-seven.vercel.app/",
+    skills: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "MediaPipe",
+      "WebRTC",
+      "AI Probing",
+      "Vercel",
+    ],
+    descriptionList: [
+      "Autonomous Voice-First Interview Simulations: Interactive AI interviewer with adaptive multi-turn probing that dynamically adjusts question depth based on candidate answers",
+      "Real-Time Integrity & Proctoring Guard: Embedded MediaPipe face tracking and head-orientation checks directly in-browser to monitor candidate focus without invasive software",
+      "Comprehensive Diagnostic Assessment: Automated generation of candidate rubrics, structured scoring, benchmark answers, and downloadable diagnostic evaluation reports",
+    ],
+  },
+  {
+    title: "AutoFiller AI",
+    href: "/projects/autofiller-ai",
+    description:
+      "Secure Windows desktop automation tool that maps and fills repetitive web forms from extracted documents while enforcing a strict zero-value privacy contract and operator takeover.",
+    image: "/assets/autofiller.png",
+    darkModeImage: "/assets/autofiller.png",
+    githubLink: "https://github.com/Aayush-Dubey123/autofiller",
+    liveLink: "http://autofiller-website.vercel.app/",
+    skills: [
+      "Electron",
+      "Chromium",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "React",
+      "Tailwind CSS",
+      "Windows DPAPI",
+    ],
+    descriptionList: [
+      "Permanent Review-Ready State & Human Invariant: Desktop automation that automatically pauses before form submission, guaranteeing 100% human control and zero accidental submissions",
+      "Zero-Value AI Field Mapping: Sends schema labels and field names only to the model for mapping while values remain strictly locked inside local AES-256-GCM storage with Windows DPAPI encryption",
+      "Live DOM Verification & Operator Takeover: Real-time form traversal that respects user sign-in gates, OTPs, and CAPTCHAs while allowing seamless instant manual operator intervention",
+    ],
+  },
+  {
     title: "Warehouse Management System",
     href: "/projects/warehouse-management-system",
     description:
@@ -338,6 +388,20 @@ export type JourneyItem = {
 }
 
 export const JOURNEY: JourneyItem[] = [
+  {
+    id: "eigi-ai-iim-nagpur",
+    date: "2026",
+    title: "GenAI Presentation & Demo - Eigi.AI @ IIM Nagpur",
+    description:
+      "Visited and been part of EIGI club setup and started at IIM Nagpur.",
+    image: "/journey/iim-nagpur-eigi.jpg",
+    imageAlt: "Presentation and live GenAI demo at IIM Nagpur with Eigi.AI",
+    tags: ["GenAI", "IIM Nagpur", "Eigi.AI", "Speaker"],
+    link: {
+      label: "View LinkedIn post",
+      href: "https://lnkd.in/p/d4AqdMy4",
+    },
+  },
   {
     id: "eigi-hackathon",
     date: "2026",
