@@ -140,7 +140,7 @@ const ProjectPage = async ({
         </Card>
       </div>
       {/* Links Section */}
-      <div className="flex w-full gap-x-4 p-2 md:p-4">
+      <div className="flex flex-col sm:flex-row w-full gap-2 sm:gap-x-4 p-2 md:p-4">
         {links.map((item) => {
           return (
             <a
@@ -148,7 +148,7 @@ const ProjectPage = async ({
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-edge group relative flex w-1/2 cursor-pointer flex-row rounded-sm border-[1px] border-dashed"
+              className="border-edge group relative flex w-full sm:w-1/2 min-h-[44px] cursor-pointer flex-row rounded-sm border-[1px] border-dashed transition-colors hover:bg-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <div
                 key={item.name}

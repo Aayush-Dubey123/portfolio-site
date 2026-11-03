@@ -86,3 +86,5 @@ I enjoy building practical systems that connect technology with real-world probl
 - GitHub: https://github.com/Aayush-Dubey123
 - LinkedIn: https://www.linkedin.com/in/aayush-dubey-ab19a72b9/
 - Email: aayushdubey2300@gmail.com
+
+omp --resume 01a19828-ea8c-75dc-be8d-a83fdfae23c1

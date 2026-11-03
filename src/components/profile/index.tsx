@@ -312,7 +312,7 @@ export function ProfileHeader() {
                           ? "Navigate to Connect section"
                           : `${item.name} - Aayush Dubey`
                       }
-                      className="border-edge flex h-full items-center justify-center overflow-hidden border-dashed p-1.5 [&:not(:first-child)]:border-l-[1px] transition-colors hover:bg-accent/40"
+                      className="border-edge flex min-h-[44px] min-w-[44px] h-full items-center justify-center overflow-hidden border-dashed p-2 [&:not(:first-child)]:border-l-[1px] transition-colors hover:bg-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       <Image
                         src={item.icon}
@@ -380,7 +380,7 @@ export function TechStack() {
   return (
     <section id="tech-stack" className="w-full scroll-mt-16">
       <HeaderTitle title="Tech Stack" />
-      <div className="my-2 grid w-full grid-cols-4 gap-2 p-2 lg:grid-cols-6">
+      <div className="my-2 grid w-full grid-cols-3 gap-2 p-2 sm:grid-cols-4 lg:grid-cols-6">
         {TECH_STACK.map((item) => {
           const ext = item.ext || "svg"
           return (
@@ -675,7 +675,7 @@ export function JourneyItem({
                 href={item.link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/link text-foreground hover:text-primary focus-visible:ring-ring inline-flex items-center gap-1.5 rounded-sm text-xs font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
+                className="group/link text-foreground hover:text-primary focus-visible:ring-ring inline-flex items-center gap-1.5 rounded-sm text-xs sm:text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none min-h-[44px] py-1"
               >
                 <span>{item.link.label}</span>
                 <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />

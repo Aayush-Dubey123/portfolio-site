@@ -211,7 +211,8 @@ export function SingleProject({ project }: { project: Project }) {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground"
+                  aria-label={`${project.title} GitHub repository`}
+                  className="text-muted-foreground hover:text-foreground flex min-h-[44px] min-w-[44px] items-center justify-center -ml-2 p-2 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   <GithubIcon className="size-4" />
                 </a>
@@ -226,7 +227,8 @@ export function SingleProject({ project }: { project: Project }) {
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground"
+                  aria-label={`${project.title} Live demo`}
+                  className="text-muted-foreground hover:text-foreground flex min-h-[44px] min-w-[44px] items-center justify-center p-2 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   <LinkIcon className="size-4" />
                 </a>
@@ -373,7 +375,7 @@ export function GitHubContributions() {
               ref={scrollContainerRef}
               className="w-full overflow-x-auto pb-3 pt-1 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-border/60"
             >
-              <div className="flex w-full justify-center min-w-fit">
+              <div className="flex w-full justify-start sm:justify-center min-w-fit">
                 <div className="flex flex-col gap-1 select-none">
                   <div className="flex gap-[3px] pl-6 sm:pl-7 text-[11px] font-medium text-muted-foreground h-4">
                     {displayWeeks.map((_, weekIdx) => {
@@ -647,7 +649,7 @@ export function Connect() {
                   placeholder="Your Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="border-edge bg-background/50 focus:border-ring focus:ring-ring/20 text-primary placeholder:text-muted-foreground/60 w-full rounded-md border px-3 py-2 text-sm transition-colors focus:ring-2 focus:outline-none disabled:opacity-50"
+                  className="border-edge bg-background/50 focus:border-ring focus:ring-ring/20 text-primary placeholder:text-muted-foreground/60 w-full rounded-md border px-3 py-2.5 text-base sm:text-sm transition-colors focus:ring-2 focus:outline-none disabled:opacity-50 min-h-[44px]"
                 />
               </div>
 
@@ -666,7 +668,7 @@ export function Connect() {
                   placeholder="your.email@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="border-edge bg-background/50 focus:border-ring focus:ring-ring/20 text-primary placeholder:text-muted-foreground/60 w-full rounded-md border px-3 py-2 text-sm transition-colors focus:ring-2 focus:outline-none disabled:opacity-50"
+                  className="border-edge bg-background/50 focus:border-ring focus:ring-ring/20 text-primary placeholder:text-muted-foreground/60 w-full rounded-md border px-3 py-2.5 text-base sm:text-sm transition-colors focus:ring-2 focus:outline-none disabled:opacity-50 min-h-[44px]"
                 />
               </div>
             </div>
@@ -686,7 +688,7 @@ export function Connect() {
                 placeholder="e.g. Full-Stack Project, AI Systems & MCP, Job Opportunity, Collaboration..."
                 value={interest}
                 onChange={(e) => setInterest(e.target.value)}
-                className="border-edge bg-background/50 focus:border-ring focus:ring-ring/20 text-primary placeholder:text-muted-foreground/60 w-full rounded-md border px-3 py-2 text-sm transition-colors focus:ring-2 focus:outline-none disabled:opacity-50"
+                className="border-edge bg-background/50 focus:border-ring focus:ring-ring/20 text-primary placeholder:text-muted-foreground/60 w-full rounded-md border px-3 py-2.5 text-base sm:text-sm transition-colors focus:ring-2 focus:outline-none disabled:opacity-50 min-h-[44px]"
               />
 
               <div className="flex flex-wrap items-center gap-1.5 pt-1">
@@ -697,7 +699,7 @@ export function Connect() {
                     type="button"
                     disabled={isSubmitting}
                     onClick={() => setInterest(item)}
-                    className="border-edge hover:border-foreground/30 hover:bg-accent/60 text-muted-foreground hover:text-primary rounded-full border border-dashed px-2 py-0.5 text-[11px] transition-colors"
+                    className="border-edge hover:border-foreground/30 hover:bg-accent/60 text-muted-foreground hover:text-primary rounded-full border border-dashed px-2.5 py-1 text-xs sm:text-[11px] min-h-[32px] sm:min-h-0 inline-flex items-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
                     {item}
                   </button>
@@ -720,7 +722,7 @@ export function Connect() {
                 placeholder="Tell me about what you're working on, questions, or how we could work together..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="border-edge bg-background/50 focus:border-ring focus:ring-ring/20 text-primary placeholder:text-muted-foreground/60 w-full resize-y rounded-md border px-3 py-2 text-sm transition-colors focus:ring-2 focus:outline-none disabled:opacity-50"
+                className="border-edge bg-background/50 focus:border-ring focus:ring-ring/20 text-primary placeholder:text-muted-foreground/60 w-full resize-y rounded-md border px-3 py-2.5 text-base sm:text-sm transition-colors focus:ring-2 focus:outline-none disabled:opacity-50 min-h-[110px]"
               />
             </div>
 
@@ -731,15 +733,15 @@ export function Connect() {
               </div>
             )}
 
-            <div className="flex items-center justify-between pt-1">
-              <span className="text-muted-foreground font-mono text-[11px]">
+            <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
+              <span className="text-muted-foreground font-mono text-[11px] text-center sm:text-left">
                 Deliveries routed to aayushdubey2300@gmail.com
               </span>
 
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="cursor-pointer gap-2 font-medium"
+                className="cursor-pointer gap-2 font-medium min-h-[44px] w-full sm:w-auto"
               >
                 {isSubmitting ? (
                   <>
