@@ -17,7 +17,13 @@ import {
   AlertCircle,
 } from "lucide-react"
 import { toast } from "sonner"
-import { GITHUB_CONTRIBUTIONS, PROJECTS, type Project } from "@/data"
+import {
+  COPYRIGHT_FILINGS,
+  GITHUB_CONTRIBUTIONS,
+  PROJECTS,
+  type CopyrightFiling,
+  type Project,
+} from "@/data"
 import { cn } from "@/lib/utils"
 import {
   Button,
@@ -474,6 +480,111 @@ export function GitHubContributions() {
               <span>More</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* =========================================================================
+   COPYRIGHT & PUBLICATION SECTION
+   ========================================================================= */
+
+const STATUS_TONE: Record<CopyrightFiling["tone"], string> = {
+  pending:
+    "border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300",
+  waiting: "border-sky-500/40 bg-sky-500/10 text-sky-700 dark:text-sky-300",
+}
+
+export function CopyrightPublication() {
+  if (!COPYRIGHT_FILINGS.length) return null
+
+  return (
+    <section id="copyright" className="w-full scroll-mt-16">
+      <HeaderTitle title="Copyright and Publication" id="copyright-heading" />
+      <div className="p-3 sm:p-5">
+        <p className="text-muted-foreground mb-4 text-sm leading-relaxed sm:text-base">
+          Computer-software copyright applications filed with the Copyright
+          Office, Government of India. Both are still in process; the
+          screenshots below are the live status pages, with the communication
+          address hidden.
+        </p>
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          {COPYRIGHT_FILINGS.map((filing) => (
+            <article
+              key={filing.id}
+              className="group border-border/70 bg-card/40 flex flex-col gap-3 rounded-[10px] border p-3 shadow-xs backdrop-blur-xs"
+            >
+              <div className="border-border rounded-[10px] border p-[4px]">
+                <div
+                  className={cn(
+                    "bg-muted border-border relative w-full overflow-hidden rounded-[6px] border select-none",
+                    "bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-edge)]/0 transition-all duration-300 group-hover:[--pattern-foreground:var(--color-border)]/90"
+                  )}
+                >
+                  <div className="p-2 sm:p-3">
+                    <a
+                      href={filing.image}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open full-size status screenshot: ${filing.title}`}
+                      className="bg-background border-border/60 focus-visible:ring-ring relative block aspect-[1079/575] w-full cursor-zoom-in overflow-hidden rounded-[4px] border shadow-sm focus-visible:ring-2 focus-visible:outline-none"
+                    >
+                      <Image
+                        src={filing.image}
+                        alt={filing.imageAlt}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 520px"
+                        loading="lazy"
+                        className="bg-white object-contain object-top"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2 px-1">
+                <span
+                  className={cn(
+                    "inline-flex w-fit items-center rounded-full border px-2.5 py-0.5 text-xs font-medium",
+                    STATUS_TONE[filing.tone]
+                  )}
+                >
+                  {filing.status}
+                </span>
+                <h3 className="text-primary text-base leading-snug font-medium text-balance">
+                  {filing.title}
+                </h3>
+
+                <dl className="text-xs sm:text-sm grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+                  <dt className="text-muted-foreground">Diary no.</dt>
+                  <dd className="text-primary font-mono">{filing.diaryNumber}</dd>
+                  <dt className="text-muted-foreground">Class of work</dt>
+                  <dd className="text-primary">{filing.workClass}</dd>
+                  <dt className="text-muted-foreground">Applicant</dt>
+                  <dd className="text-primary">{filing.applicant}</dd>
+                </dl>
+
+                <p className="text-muted-foreground text-xs leading-relaxed sm:text-sm">
+                  {filing.note}
+                </p>
+                <p className="text-muted-foreground/80 text-xs">
+                  <span className="font-medium">{filing.status}:</span>{" "}
+                  {filing.statusMeaning}
+                </p>
+
+                {filing.relatedProject && (
+                  <Link
+                    href={filing.relatedProject.href}
+                    className="group/link text-foreground hover:text-primary focus-visible:ring-ring inline-flex min-h-[44px] w-fit items-center gap-1.5 rounded-sm py-1 text-xs font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none sm:text-sm"
+                  >
+                    <span>{filing.relatedProject.label}</span>
+                    <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                  </Link>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

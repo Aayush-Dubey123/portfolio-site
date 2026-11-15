@@ -2,6 +2,7 @@ import {
   About,
   Blogs,
   Connect,
+  CopyrightPublication,
   Experience,
   GitHubContributions,
   Journey,
@@ -54,6 +55,9 @@ const Page = () => {
           <Blogs />
         </>
       )}
+
+      <Separator />
+      <CopyrightPublication />
 
       <Separator />
       <Connect />

@@ -82,6 +82,7 @@ export const NAV_ITEMS = [
   { name: "Experience", href: "/#experience" },
   { name: "Journey", href: "/#journey" },
   { name: "Tech Stack", href: "/#tech-stack" },
+  { name: "Copyright", href: "/#copyright" },
   { name: "Connect", href: "/#connect" },
 ]
 
@@ -159,6 +160,56 @@ export type Project = {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    title: "HeatSafe Nagpur",
+    href: "/projects/heatsafe-nagpur",
+    description:
+      "Satellite-based surface-heat map of Nagpur: 30 m temperature estimates from Landsat 8/9 with a 90% range, locality and zone rankings, and the nearest cooling places, in English, Hindi and Marathi.",
+    image: "/assets/heatsafe.png",
+    darkModeImage: "/assets/heatsafe.png",
+    githubLink: "https://github.com/Aayush-Dubey123/heatsafe-ML",
+    liveLink: "https://heatsafengp.vercel.app/",
+    skills: [
+      "FastAPI",
+      "Python",
+      "React",
+      "Landsat 8/9",
+      "Machine Learning",
+      "Vercel",
+      "Render",
+    ],
+    descriptionList: [
+      "Satellite-Derived Surface Temperature: Landsat 8/9 imagery turned into 30 m surface-temperature estimates, each with a 90% range; typical error is 1.4 °C against 2.4 °C for the best simple method",
+      "Actionable Local Rankings: Hottest and coolest localities and zones, plus the nearest cooling places, so a resident can see how hot their area is and where to cool down",
+      "Built for Nagpur's Residents: Phone-first interface in English, Hindi and Marathi, deployed on free tiers (Vercel and Render) at zero running cost",
+    ],
+  },
+  {
+    title: "AudioPipeline",
+    href: "/projects/audiopipeline",
+    description:
+      "Hindi and English text-to-speech and voice-cloning studio built on a 6 GB laptop GPU, with a showcase site of before/after audio samples and measured latency and VRAM results.",
+    image: "/assets/audiopipeline.png",
+    darkModeImage: "/assets/audiopipeline.png",
+    githubLink: "https://github.com/Aayush-Dubey123/audiopipeline",
+    liveLink: "",
+    skills: [
+      "FastAPI",
+      "Python",
+      "PyTorch",
+      "CUDA",
+      "Chatterbox TTS",
+      "React",
+      "TypeScript",
+      "Vite",
+      "Astro",
+    ],
+    descriptionList: [
+      "Hindi & English Voice Generation: FastAPI backend running Chatterbox Multilingual TTS on an NVIDIA RTX 3050 laptop GPU, with a React + Vite studio frontend",
+      "Tuned by Measurement: A resident model singleton cut model load from about 60 s to 41.5 s and warm previews from about 126 s to 7.3 s, with conditioning-cache hits in about 31 ms and roughly 3.5 GB peak VRAM",
+      "Showcase Site: Astro Starlight documentation site with before/after audio comparisons, the engineering story and a run-it-yourself guide",
+    ],
+  },
   {
     title: "PrepAI",
     href: "/projects/prepai",
@@ -449,6 +500,58 @@ export const JOURNEY: JourneyItem[] = [
       label: "View LinkedIn post",
       href: "https://www.linkedin.com/posts/aayush-dubey-ab19a72b9_securing-a-top-7-position-amongs-the-100s-activity-7287673150333444096-0aH1",
     },
+  },
+]
+
+/* =========================================================================
+   COPYRIGHT & PUBLICATION
+   ========================================================================= */
+
+export type CopyrightFiling = {
+  id: string
+  title: string
+  diaryNumber: string
+  workClass: string
+  status: string
+  statusMeaning: string
+  tone: "pending" | "waiting"
+  applicant: string
+  note: string
+  image: string
+  imageAlt: string
+  relatedProject?: { label: string; href: string }
+}
+
+export const COPYRIGHT_FILINGS: CopyrightFiling[] = [
+  {
+    id: "cryow3",
+    title: "CryoW3 - Web Aggregation Web Application",
+    diaryNumber: "SW-50898/2025-CO",
+    workClass: "Computer Software",
+    status: "Pending for Hearing",
+    statusMeaning: "Pending for Hearing process.",
+    tone: "pending",
+    applicant: "Vedant Dipak Bagwale",
+    note: "Team minor project at St. Vincent Pallotti College of Engineering & Technology (2025-26), developed with Aryan Seth, Vedant Bagwale and Tanmay Thaokar.",
+    image: "/assets/copyright-cryow3.png",
+    imageAlt:
+      "Copyright Office of India status page for diary number SW-50898/2025-CO, CryoW3 - Web Aggregation Web Application, status Pending for Hearing",
+    relatedProject: { label: "CryoW3times project", href: "/projects/cryow3times" },
+  },
+  {
+    id: "ai-interview-system",
+    title: "AI interview system",
+    diaryNumber: "SW-49239/2026-CO",
+    workClass: "Computer Software",
+    status: "Waiting",
+    statusMeaning:
+      "Payment accepted; application is in the mandatory waiting period of one month (Copyright Act 1957).",
+    tone: "waiting",
+    applicant: "Aayush Dubey",
+    note: "Computer-software copyright application for an AI interview system.",
+    image: "/assets/copyright-ai-interview.png",
+    imageAlt:
+      "Copyright Office of India status page for diary number SW-49239/2026-CO, AI interview system, status Waiting",
   },
 ]
 
