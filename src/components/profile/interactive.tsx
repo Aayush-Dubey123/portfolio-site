@@ -605,6 +605,21 @@ export function CopyrightPublication() {
             </article>
           ))}
         </div>
+
+        <div className="border-edge bg-muted/20 mt-4 rounded-[10px] border border-dashed p-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className="text-primary text-base font-medium">
+              Research paper
+            </h3>
+            <span className="border-border/60 text-muted-foreground inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium">
+              Details coming soon
+            </span>
+          </div>
+          <p className="text-muted-foreground mt-2 text-xs leading-relaxed sm:text-sm">
+            Publication details for the team&apos;s research paper will be
+            added here once they are final.
+          </p>
+        </div>
       </div>
     </section>
   )
