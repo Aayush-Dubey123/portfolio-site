@@ -161,27 +161,28 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    title: "HeatSafe Nagpur",
-    href: "/projects/heatsafe-nagpur",
+    title: "AutoFiller AI",
+    href: "/projects/autofiller-ai",
     description:
-      "Satellite-based surface-heat map of Nagpur: 30 m temperature estimates from Landsat 8/9 with a 90% range, locality and zone rankings, and the nearest cooling places, in English, Hindi and Marathi.",
-    image: "/assets/heatsafe.png",
-    darkModeImage: "/assets/heatsafe.png",
-    githubLink: "https://github.com/Aayush-Dubey123/heatsafe-ML",
-    liveLink: "https://heatsafengp.vercel.app/",
+      "Secure Windows desktop automation tool that maps and fills repetitive web forms from extracted documents while enforcing a strict zero-value privacy contract and operator takeover.",
+    image: "/assets/autofiller.png",
+    darkModeImage: "/assets/autofiller.png",
+    githubLink: "https://github.com/Aayush-Dubey123/autofiller",
+    liveLink: "http://autofiller-website.vercel.app/",
     skills: [
+      "Electron",
+      "Chromium",
+      "TypeScript",
       "FastAPI",
       "Python",
       "React",
-      "Landsat 8/9",
-      "Machine Learning",
-      "Vercel",
-      "Render",
+      "Tailwind CSS",
+      "Windows DPAPI",
     ],
     descriptionList: [
-      "Satellite-Derived Surface Temperature: Landsat 8/9 imagery turned into 30 m surface-temperature estimates, each with a 90% range; typical error is 1.4 °C against 2.4 °C for the best simple method",
-      "Actionable Local Rankings: Hottest and coolest localities and zones, plus the nearest cooling places, so a resident can see how hot their area is and where to cool down",
-      "Built for Nagpur's Residents: Phone-first interface in English, Hindi and Marathi, deployed on free tiers (Vercel and Render) at zero running cost",
+      "Permanent Review-Ready State & Human Invariant: Desktop automation that automatically pauses before form submission, guaranteeing 100% human control and zero accidental submissions",
+      "Zero-Value AI Field Mapping: Sends schema labels and field names only to the model for mapping while values remain strictly locked inside local AES-256-GCM storage with Windows DPAPI encryption",
+      "Live DOM Verification & Operator Takeover: Real-time form traversal that respects user sign-in gates, OTPs, and CAPTCHAs while allowing seamless instant manual operator intervention",
     ],
   },
   {
@@ -211,6 +212,30 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    title: "HeatSafe Nagpur",
+    href: "/projects/heatsafe-nagpur",
+    description:
+      "Satellite-based surface-heat map of Nagpur: 30 m temperature estimates from Landsat 8/9 with a 90% range, locality and zone rankings, and the nearest cooling places, in English, Hindi and Marathi.",
+    image: "/assets/heatsafe.png",
+    darkModeImage: "/assets/heatsafe.png",
+    githubLink: "https://github.com/Aayush-Dubey123/heatsafe-ML",
+    liveLink: "https://heatsafengp.vercel.app/",
+    skills: [
+      "FastAPI",
+      "Python",
+      "React",
+      "Landsat 8/9",
+      "Machine Learning",
+      "Vercel",
+      "Render",
+    ],
+    descriptionList: [
+      "Satellite-Derived Surface Temperature: Landsat 8/9 imagery turned into 30 m surface-temperature estimates, each with a 90% range; typical error is 1.4 °C against 2.4 °C for the best simple method",
+      "Actionable Local Rankings: Hottest and coolest localities and zones, plus the nearest cooling places, so a resident can see how hot their area is and where to cool down",
+      "Built for Nagpur's Residents: Phone-first interface in English, Hindi and Marathi, deployed on free tiers (Vercel and Render) at zero running cost",
+    ],
+  },
+  {
     title: "PrepAI",
     href: "/projects/prepai",
     description:
@@ -233,31 +258,6 @@ export const PROJECTS: Project[] = [
       "Autonomous Voice-First Interview Simulations: Interactive AI interviewer with adaptive multi-turn probing that dynamically adjusts question depth based on candidate answers",
       "Real-Time Integrity & Proctoring Guard: Embedded MediaPipe face tracking and head-orientation checks directly in-browser to monitor candidate focus without invasive software",
       "Comprehensive Diagnostic Assessment: Automated generation of candidate rubrics, structured scoring, benchmark answers, and downloadable diagnostic evaluation reports",
-    ],
-  },
-  {
-    title: "AutoFiller AI",
-    href: "/projects/autofiller-ai",
-    description:
-      "Secure Windows desktop automation tool that maps and fills repetitive web forms from extracted documents while enforcing a strict zero-value privacy contract and operator takeover.",
-    image: "/assets/autofiller.png",
-    darkModeImage: "/assets/autofiller.png",
-    githubLink: "https://github.com/Aayush-Dubey123/autofiller",
-    liveLink: "http://autofiller-website.vercel.app/",
-    skills: [
-      "Electron",
-      "Chromium",
-      "TypeScript",
-      "FastAPI",
-      "Python",
-      "React",
-      "Tailwind CSS",
-      "Windows DPAPI",
-    ],
-    descriptionList: [
-      "Permanent Review-Ready State & Human Invariant: Desktop automation that automatically pauses before form submission, guaranteeing 100% human control and zero accidental submissions",
-      "Zero-Value AI Field Mapping: Sends schema labels and field names only to the model for mapping while values remain strictly locked inside local AES-256-GCM storage with Windows DPAPI encryption",
-      "Live DOM Verification & Operator Takeover: Real-time form traversal that respects user sign-in gates, OTPs, and CAPTCHAs while allowing seamless instant manual operator intervention",
     ],
   },
   {
