@@ -19,6 +19,7 @@ import {
 import { toast } from "sonner"
 import {
   COPYRIGHT_FILINGS,
+  COPYRIGHT_VERIFY_URL,
   GITHUB_CONTRIBUTIONS,
   PROJECTS,
   type CopyrightFiling,
@@ -509,6 +510,18 @@ export function CopyrightPublication() {
           screenshots below are the live status pages, with the communication
           address hidden.
         </p>
+        <p className="text-muted-foreground mb-4 text-sm leading-relaxed sm:text-base">
+          Anyone can verify a filing: open the{" "}
+          <a
+            href={COPYRIGHT_VERIFY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground hover:text-primary underline underline-offset-4"
+          >
+            Copyright Office status page
+          </a>{" "}
+          and enter the diary number shown on each card.
+        </p>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           {COPYRIGHT_FILINGS.map((filing) => (
             <article
@@ -563,6 +576,12 @@ export function CopyrightPublication() {
                   <dd className="text-primary">{filing.workClass}</dd>
                   <dt className="text-muted-foreground">Applicant</dt>
                   <dd className="text-primary">{filing.applicant}</dd>
+                  {filing.team && (
+                    <>
+                      <dt className="text-muted-foreground">Team</dt>
+                      <dd className="text-primary">{filing.team}</dd>
+                    </>
+                  )}
                 </dl>
 
                 <p className="text-muted-foreground text-xs leading-relaxed sm:text-sm">

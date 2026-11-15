@@ -507,6 +507,8 @@ export const JOURNEY: JourneyItem[] = [
    COPYRIGHT & PUBLICATION
    ========================================================================= */
 
+export const COPYRIGHT_VERIFY_URL = "https://copyright.gov.in/frmStatusGenUser.aspx"
+
 export type CopyrightFiling = {
   id: string
   title: string
@@ -516,6 +518,7 @@ export type CopyrightFiling = {
   statusMeaning: string
   tone: "pending" | "waiting"
   applicant: string
+  team?: string
   note: string
   image: string
   imageAlt: string
@@ -532,7 +535,8 @@ export const COPYRIGHT_FILINGS: CopyrightFiling[] = [
     statusMeaning: "Pending for Hearing process.",
     tone: "pending",
     applicant: "Vedant Dipak Bagwale",
-    note: "Team minor project at St. Vincent Pallotti College of Engineering & Technology (2025-26), developed with Aryan Seth, Vedant Bagwale and Tanmay Thaokar.",
+    team: "Aayush Dubey, Aryan Seth, Vedant Bagwale, Tanmay Thaokar",
+    note: "Team minor project at St. Vincent Pallotti College of Engineering & Technology (2025-26).",
     image: "/assets/copyright-cryow3.png",
     imageAlt:
       "Copyright Office of India status page for diary number SW-50898/2025-CO, CryoW3 - Web Aggregation Web Application, status Pending for Hearing",
