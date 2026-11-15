@@ -192,7 +192,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/audiopipeline.png",
     darkModeImage: "/assets/audiopipeline.png",
     githubLink: "https://github.com/Aayush-Dubey123/audiopipeline",
-    liveLink: "",
+    liveLink: "https://audioclone.aayushdubey2300.workers.dev/",
     skills: [
       "FastAPI",
       "Python",
